@@ -1854,7 +1854,7 @@ object Form1: TForm1
     object Label12: TLabel
       Left = 264
       Height = 34
-      Top = 158
+      Top = 160
       Width = 55
       Caption = 'Hilo 6'#13#10'0.0 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1885,6 +1885,15 @@ object Form1: TForm1
     Text = '<b>Hola</b><br>Hola'
     OnHotSpotClick = HtmlViewer1HotSpotClick
     TabOrder = 3
+  end
+  object Label13: TLabel
+    Left = 127
+    Height = 15
+    Top = 0
+    Width = 233
+    Caption = 'CTRL+I->Abre / Cierra panel informativo'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
   end
   object RxVersionInfo1: TRxVersionInfo
     Left = 40
