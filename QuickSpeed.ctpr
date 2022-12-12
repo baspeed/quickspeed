@@ -17,9 +17,12 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <BuildNr Value="112"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="1"/>
+      <BuildNr Value="172"/>
       <Language Value="040A"/>
-      <StringTable CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.1"/>
+      <Attributes pvaDebug="True"/>
+      <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.1"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -33,7 +36,19 @@
     </RunParams>
     <RequiredPackages>
       <Item>
-        <PackageName Value="pl_LNet"/>
+        <PackageName Value="pl_Graphics32"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_ExControls"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_Cindy"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_RX"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_Indy"/>
       </Item>
       <Item>
         <PackageName Value="pl_MapViewer"/>
@@ -42,43 +57,7 @@
         <PackageName Value="pl_HtmlViewer"/>
       </Item>
       <Item>
-        <PackageName Value="pl_ECControls"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_Cindy"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_LuiControls"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_KControls"/>
-      </Item>
-      <Item>
-        <PackageName Value="adFCL"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_RX"/>
-      </Item>
-      <Item>
-        <PackageName Value="lz_Industrial"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_EvsSimpleGraph"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_ExControls"/>
-      </Item>
-      <Item>
-        <PackageName Value="lz_taChart"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_ASIOVST"/>
-      </Item>
-      <Item>
         <PackageName Value="pl_JVCL"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_Shapes"/>
       </Item>
       <Item>
         <PackageName Value="pl_BGRAcontrols"/>
@@ -104,7 +83,7 @@
       </Unit>
       <Unit>
         <Filename Value="unit2.pas"/>
-        <FRMtype Value="0"/>
+        <FRMtype Value="200"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form2"/>
         <HasResources Value="True"/>

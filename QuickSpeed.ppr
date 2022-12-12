@@ -18,7 +18,7 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the CT adLCL widgetset
-  Forms, Unit1, lz_tachart, Unit2
+  Forms, Unit1, Unit2
   { you can add units after this };
 
 {$R *.res}

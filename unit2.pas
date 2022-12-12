@@ -67,12 +67,18 @@ begin
      T:=TGpsPoint.Create(1.86026,41.7515);      // 1er punto GPS -> test de bandaancha.eu (en Barcelona, España)
      T.Name:='Test de bandaancha.eu'+#13+'(Barcelona - España)';    // Título del test de velocidad 1
      MapView1.GPSItems.Add(T,1); // Añade test de velocidad al mapa
-     T:=TGpsPoint.Create(-4.7245,41.6523);      // 2do punto GPS -> test de Orange (en Valladolid, España)
-     T.Name:='Test de Orange'+#13+'(Valladolid - España)'; // Título del test de velocidad 2
+     T:=TGpsPoint.Create(-2.244644,53.483959);      // 2do punto GPS -> test de ThinkBroadBand (en Londres, Inglaterra)
+     T.Name:='Test de ThinkBroadBand'+#13+'(Londres - Inglaterra)'; // Título del test de velocidad 2
      MapView1.GPSItems.Add(T,2); // Añade test de velocidad al mapa
      T:=TGpsPoint.Create(3.17456,50.69421);    // 3er punto GPS -> test de OVH (Roubaix, Francia)
      T.Name:='Test de OVH'+#13+'(Roubaix - Francia)'; // Título del test de velocidad
      MapView1.GPSItems.Add(T,3); // Añade test de velocidad al mapa
+     T:=TGpsPoint.Create( -121.96736110185623,37.37102186757838);    // 4o punto GPS -> test de NVIDIA (California, EEUU)
+     T.Name:='Test de NVIDIA'+#13+'(Santa Clara, California - EEUU)'; // Título del test de velocidad
+     MapView1.GPSItems.Add(T,4); // Añade test de velocidad al mapa
+     T:=TGpsPoint.Create(-0.12800499999998327,51.50812900000004);    // 5o punto GPS -> test de LINODE (Londres, Inglaterra)
+     T.Name:='Test de LINODE'+#13+'(Londres, Inglaterra)'; // Título del test de velocidad
+     MapView1.GPSItems.Add(T,5); // Añade test de velocidad al mapa
 end;
 
 
@@ -95,14 +101,24 @@ begin
                            cadena_test:='Test desde bandaancha.eu (Barcelona - España)'; // Cambia la cadena de texto a mostrar en la ventana principal
                       end;
                   2 : begin // Si se ha pulsado el test de Orange - Valladolid
-                           BCButton1.Caption:='Seleccionar test desde Orange (Valladolid - España)'; // Cambia texto del botón de selección de test
+                           BCButton1.Caption:='Seleccionar test desde ThinkBroadBand (Londres - Inglaterra)'; // Cambia texto del botón de selección de test
                            numero_test:=2; // Cambia el número de test activo
-                           cadena_test:='Test desde Orange (Valladolid - España)'; // Cambia la cadena de texto a mostrar en la ventana principal
+                           cadena_test:='Test desde ThinkBroadBand (Londres - Inglaterra)'; // Cambia la cadena de texto a mostrar en la ventana principal
                       end;
                   3 : begin // Si se ha pulsado el test de OVH - Roubaix
                            BCButton1.Caption:='Seleccionar test desde OVH (Roubaix - Francia)'; // Cambia el texto del botón de selección de test
                            numero_test:=3; // Cambia el número de test activo
                            cadena_test:='Test desde OVH (Roubaix - Francia)'; // Cambia la cadena de texto a mostrar en la ventana principal
+                      end;
+                  4 : begin // Si se ha pulsado el test de NVIDIA - California
+                           BCButton1.Caption:='Seleccionar test desde NVIDIA (Santa Clara, California - EEUU)'; // Cambia el texto del botón de selección de test
+                           numero_test:=4; // Cambia el número de test activo
+                           cadena_test:='Test desde NVIDIA (Santa Clara, California - EEUU)'; // Cambia la cadena de texto a mostrar en la ventana principal
+                      end;
+                  5 : begin // Si se ha pulsado el test de LINODE - Londres
+                           BCButton1.Caption:='Seleccionar test desde LINODE (Londres, Inglaterra)'; // Cambia el texto del botón de selección de test
+                           numero_test:=4; // Cambia el número de test activo
+                           cadena_test:='Test desde LINODE (Londres, Inglaterra)'; // Cambia la cadena de texto a mostrar en la ventana principal
                       end;
              end;
              BCButton1.Enabled:=True; // Se activa el botón de selección de test de velocidad

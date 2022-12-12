@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 470
+  Left = 473
   Height = 598
-  Top = 228
+  Top = 227
   Width = 801
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -500,6 +500,7 @@ object Form1: TForm1
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
+    OnClick = BCButton2Click
     ParentColor = False
     Rounding.RoundX = 12
     Rounding.RoundY = 12
@@ -510,11 +511,11 @@ object Form1: TForm1
   end
   object GroupBox1: TGroupBox
     Left = 8
-    Height = 152
-    Top = 312
+    Height = 112
+    Top = 352
     Width = 352
     Caption = ' Datos del test de velocidad '
-    ClientHeight = 130
+    ClientHeight = 90
     ClientWidth = 348
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
@@ -527,7 +528,7 @@ object Form1: TForm1
     object Label1: TLabel
       Left = 8
       Height = 18
-      Top = 8
+      Top = 6
       Width = 336
       AutoSize = False
       Caption = 'Test: Ninguno seleccionado actualmente'
@@ -540,15 +541,13 @@ object Form1: TForm1
     object BGRALabelFX1: TBGRALabelFX
       Left = 40
       Height = 57
-      Top = 56
-      Width = 275
+      Top = 32
+      Width = 233
       AutoSize = True
-      Caption = '00000.00 Mbps'
+      Caption = '000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -35
       Font.Name = 'Segoe UI Black'
-      Font.Pitch = fpVariable
-      Font.Quality = fqDraft
       Font.Style = [fsBold]
       Outline.Alpha = 255
       Outline.Color = clWhite
@@ -587,7 +586,7 @@ object Form1: TForm1
     TabOrder = 1
     object JvSimScope1: TJvSimScope
       Left = 48
-      Height = 98
+      Height = 100
       Top = 8
       Width = 344
       Active = False
@@ -597,13 +596,14 @@ object Form1: TForm1
       HorizontalGridSize = 250
       Lines = <      
         item
+          Color = clRed
           Position = 0
           PositionUnit = jluAbsolute
         end>
       Minimum = 0
       Maximum = 1000
-      TotalTimeSteps = 334
-      VerticalGridSize = 10
+      TotalTimeSteps = 344
+      VerticalGridSize = 5
     end
     object Label2: TLabel
       Left = 8
@@ -615,6 +615,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label3: TLabel
@@ -627,6 +628,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label4: TLabel
@@ -639,6 +641,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label5: TLabel
@@ -651,6 +654,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentFont = False
     end
     object Label6: TLabel
@@ -663,6 +667,7 @@ object Form1: TForm1
       Font.Height = -13
       Font.Pitch = fpVariable
       Font.Quality = fqDraft
+      Font.Style = [fsBold]
       ParentFont = False
     end
   end
@@ -1895,8 +1900,43 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
+  object cySimpleGauge1: TcySimpleGauge
+    Left = 8
+    Height = 37
+    Top = 311
+    Width = 352
+    DegradeBalance = 50
+    ItemOffBrush.Color = clGray
+    ItemOnBrush.Color = clAqua
+    ItemOnPen.Color = 16744448
+    ItemsCount = 31
+    Max = 100
+    Bevels = <    
+      item
+        HighlightColor = clBlack
+        ShadowColor = clBlack
+      end    
+      item
+        Width = 3
+      end    
+      item
+        Style = bcLowered
+      end    
+      item
+        HighlightColor = clBlack
+        ShadowColor = clBlack
+      end>
+    Step = 1
+  end
   object RxVersionInfo1: TRxVersionInfo
     Left = 40
     Top = 8
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = Timer1Timer
+    Left = 8
+    Top = 72
   end
 end

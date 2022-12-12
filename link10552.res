@@ -1,0 +1,799 @@
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_RX\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_ZeosDBO\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_FBDataSet\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_SQLdb\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_Report\addons\lrDialogControls\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_UIB\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_FpSpreadsheet\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_DBSQLUtils\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_Report\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_JVCL\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_taChart\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseSynedit\units\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseControls\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_RGBGraphics\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_PascalScript\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_DCP\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_Printers\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_MouseAndKeyinput\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseIdeintf\units\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_lz\lz_FreeType\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\lcl\units\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseEngines\lib\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseCodeTools\units\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseBuildintf\units\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_Win_OleDB\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\packages_pl\pl_Synapse\lib\x86_64-win64\win32\")
+SEARCH_DIR("C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\typhon\packager\units\x86_64-win64\")
+SEARCH_DIR(".\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\zlib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-jedi\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\webidl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\wasmtime\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\vcl-compat\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\unzip\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\tplylib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\tcl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\symbolic\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\sqlite\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\sdl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-unicode\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-generics\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-console\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\rsvg\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\regexpr\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\pxlib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\ptc\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\postgres\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\pastojs\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\pas2js\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\oracle\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\openssl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\opengles\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\opengl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\opencl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\openal\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\odbc\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\odata\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\nvapi\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\numlib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\mysql\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\mariadb\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\mad\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libvlc\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libusb\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libtar\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libmicrohttpd\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libgd\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libffi\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libenet\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\libcurl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\jni\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\imagemagick\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\ibase\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\httpd24\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\httpd22\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\hermes\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\hash\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\gtk2\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\gtk1\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\graph\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\gnutls\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\gitlab\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\gdbint\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fv\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fppkg\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fpmkunit\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fpindexer\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fpgtk\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\firebird\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fftw\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-xml\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-web\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-stl\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-sound\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-sdo\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-registry\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-process\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-pdf\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-passrc\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-net\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-mustache\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-js\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-hash\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-fpcunit\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-extra\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-db\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-css\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\fastcgi\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\dblib\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\chm\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\cdrom\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\cairo\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\bzip2\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\units\x86_64-win64\")
+SEARCH_DIR("C:\codetyphon\fpc\fpc64\bin\x86_64-win64\")
+INPUT(
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\sysinit.o
+I:\Proyectos\QuickSpeed\lib\x86_64-win64\QuickSpeed.o
+I:\Proyectos\QuickSpeed\lib\x86_64-win64\QuickSpeed.obj
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\system.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\lnfodwrf.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\exeinfo.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\strings.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\windows.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\objpas.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\fpintres.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\interfaces.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\forms.o
+I:\Proyectos\QuickSpeed\lib\x86_64-win64\unit1.o
+I:\Proyectos\QuickSpeed\lib\x86_64-win64\unit2.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazutf8.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\interfacebase.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\fpcadds.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\classes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\sysutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\strutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\rtlconsts.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\types.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\sortbase.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\typinfo.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\sysconst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\windirs.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\math.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\gettext.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpimage.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclproc.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lcltype.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lmessages.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclplatformdef.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\intfgraphics.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\themes.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\integerlist.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazutilities.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazloggerbase.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\graphtype.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\graphmath.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz_avl_tree.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazfileutils.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazmethodlist.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laztracer.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclstrconsts.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazutilsstrconsts.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\shlobj.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\activex.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\shellapi.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\commctrl.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\variants.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\ctypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\varutils.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazclasses.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\system.uitypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\messages.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadbmp.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritebmp.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\bmpcomn.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadpng.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritepng.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadtiff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritetiff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fptiffcmn.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclversion.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\icnstypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpimgcmn.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\pngcomn.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\zstream.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\zbase.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\gzio.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\dos.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\hash\crc.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\zdeflate.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\zinflate.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\trees.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\adler.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\infblock.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\infutil.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\infcodes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\inftrees.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\paszlib\inffast.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazversion.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\graphics.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclintf.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\contnrs.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpcanvas.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadpnm.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritepnm.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadjpeg.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritejpeg.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadtga.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritetga.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadgif.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lresources.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclrescache.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsreferences.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\clipping.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jpeglib.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdapimin.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdatasrc.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdapistd.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jmorecfg.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdeferr.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jinclude.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jerror.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jmemmgr.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdmarker.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdinput.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcomapi.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jmemnobs.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdmaster.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdcolor.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdsample.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdpostct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jddctmgr.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdphuff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdhuff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdcoefct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdmainct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jquant1.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jquant2.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdmerge.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jidctfst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jidctint.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jidctflt.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jidctred.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcapistd.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcapimin.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jdatadst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcparam.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcinit.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcmarker.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcphuff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jchuff.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcmaster.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jccolor.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcsample.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcprepct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcdctmgr.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jccoefct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jcmainct.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jfdctint.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jfdctfst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\pasjpeg\jfdctflt.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\targacmn.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazconfigstorage.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\dynqueue.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\avglvltree.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazdbglog.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\syncobjs.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazutf16.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\fileutil.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\utf8process.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazsysutils.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\maps.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\tmschema.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\fgl.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\masks.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-process\process.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-process\pipes.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32int.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\multimon.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\character.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\controls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\buttons.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\dialogs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\stdctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\menus.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\comctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32def.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\spin.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\translations.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\unicodedata.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\imglist.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\propertystorage.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\actnlist.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclclasses.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\uitypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpimgcanv.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fppixlcanv.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\pixtools.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\ellipses.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wslclclasses.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsimglist.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsproc.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsfactory.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\rttiutils.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsmenus.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazlogger.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazstringutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\custapp.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\customtimer.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\clipbrd.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\helpintfs.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\singleinstance.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\chm\fasthtmlparser.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wscontrols.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsforms.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\imagelistcache.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\textstrings.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\extendedstrings.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsstdctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsbuttons.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\buttonpanel.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\extctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lcltaskdialog.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\popupnotifier.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsextctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsdialogs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\toolwin.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wscomctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wstoolwin.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsspin.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\jsonscanner.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\jsonparser.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\fpjson.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lconvencoding.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\stringhashlist.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\jsonreader.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\codepagescommon.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\codepagesasian.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32proc.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsfactory.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wscontrols.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsbuttons.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsmenus.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsstdctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsdialogs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32themes.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32extra.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\lclmessageglue.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\calendar.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\extdlgs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\checklst.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\grids.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\shellctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wscalendar.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\calcform.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsextdlgs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wschecklst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-xml\htmldefs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\maskedit.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\dynamicarray.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz2_xmlcfg.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lcsvutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\imm.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazfilecache.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz2_dom.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz2_xmlread.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz2_xmlwrite.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\laz2_xmlutils.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\uriparser.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsgrids.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\wsshellctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wscalendar.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wschecklst.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wscomctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsextctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsextdlgs.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsforms.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsgrids.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsimglist.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsshellctrls.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\win32wsspin.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\uxtheme.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\commdlg.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\dtthemedgauge.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bcbutton.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bgralabelfx.o
+C:\codetyphon\typhon\components\packages_pl\pl_JVCL\lib\x86_64-win64\win32\JvSimScope.o
+C:\codetyphon\typhon\components\packages_pl\pl_RX\lib\x86_64-win64\win32\rxversinfo.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\htmlview.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlGlobals.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHTTP.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIOHandler.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIOHandlerSocket.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIOHandlerStack.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSSLOpenSSL.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdComponent.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\dtanalogcommon.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrabitmap.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrabitmaptypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bcbasectrls.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraclasses.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawinbitmap.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgragraphics.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraunicode.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgramultifiletype.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrautf8.o
+C:\codetyphon\typhon\components\BaseUtils\lib\x86_64-win64\lazutf8classes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadxwd.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadxpm.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritepcx.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpwritexpm.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\xwdfile.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\pcxcomn.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgralclbitmap.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgradefaultbitmap.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgracanvas.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgracanvas2d.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgratransform.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgratextbidi.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\universaldrawer.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgragrayscalemask.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrapen.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrapath.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrapolygon.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrapolygonaliased.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrablend.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraresample.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrafillinfo.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgragradientscanner.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrasse.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraarrow.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadbmp.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadjpeg.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawritepng.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawritetiff.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrafilterblur.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrafiltertype.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\base64.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraunicodetext.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrafilters.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadpcx.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgradithering.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrafilterscanner.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrapalette.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\avl_tree.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\bufstream.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgratext.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadbmpmiomap.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadgif.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadico.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadlzp.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadpcx.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadpng.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadpsd.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadtga.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadxpm.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawritelzp.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadwebp.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawritewebp.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrareadavif.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgrawriteavif.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgralzpcommon.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgracompressablebitmap.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-image\fpreadpsd.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\libwebp.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\dynlibs.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\avifbgra.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\libavif.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bctools.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bcthememanager.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bctypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-json\fpjsonrtti.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\dateutils.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAcontrols\lib\x86_64-win64\win32\bgratextfxtypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgratextfx.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgraphongtypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgracustomtextfx.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgravectorize.o
+C:\codetyphon\typhon\components\packages_pl\pl_BGRAbitmap\lib\x86_64-win64\win32\bgratypewriter.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\versionresource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\versiontypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resdatastream.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resourcetree.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resmerger.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resfactory.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\stringtableresource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\groupiconresource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\groupcursorresource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\groupresource.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\icocurtypes.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\resreader.o
+C:\codetyphon\typhon\components\packages_pl\pl_RX\lib\x86_64-win64\win32\rxconst.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\winpeimagereader.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\coffreader.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-res\cofftypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\htmlmisc.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\MetaFilePrinter.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\UrlConn.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\URLSubs.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlBuffer.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlImages.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlPrinter.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\vwPrint.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HTMLUn2.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\ReadHTML.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HTMLSubs.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\StyleTypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\StyleUn.o
+C:\codetyphon\typhon\lcl\units\x86_64-win64\printers.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HTMLGif2.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlSymb.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\BuffConv.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\BuffConvArrays.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\htmlgif1.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlCaches.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\DitherUnit.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\StylePars.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HtmlFonts.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\HSLUtils.o
+C:\codetyphon\typhon\components\packages_lz\lz_Printers\lib\x86_64-win64\win32\winutilprn.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\Htmlsbs1.o
+C:\codetyphon\typhon\components\packages_pl\pl_HtmlViewer\lib\x86_64-win64\win32\framview.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvmapviewer.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvtypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvgpsobj.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvengine.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvmapprovider.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvdownloadengine.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvdrawingengine.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvextradata.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvjobqueue.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvcache.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvdragobj.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvjobs.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvdlefpc.o
+C:\codetyphon\typhon\components\packages_pl\pl_MapViewer\lib\x86_64-win64\win32\mvde_intfgraphics.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\openssl\opensslsockets.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-web\fphttpclient.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\openssl\openssl.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\sockets.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-net\ssockets.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-net\sslsockets.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-net\sslbase.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\openssl\fpopenssl.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\winsock2.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-net\resolve.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\winsock.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-web\httpdefs.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-web\httpprotocol.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdException.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdExceptionCore.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAssignedNumbers.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHeaderList.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHTTPHeaderInfo.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdReplyRFC.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSSL.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdZLibCompressorBase.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdTCPClient.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdURI.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCookie.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCookieManager.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAuthentication.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAuthenticationManager.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdMultipartFormData.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdGlobal.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdBaseComponent.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdUriUtils.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdStack.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdStackConsts.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdWship6.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdWinsock2.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStrings.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdStackWindows.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdStackBSDBase.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIDN.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdGlobalProtocols.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCharsets.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIPAddress.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-registry\registry.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStringsCore.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStringsProtocols.o
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\fcl-base\inifiles.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCoderMIME.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCoder3to4.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCoder.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdReply.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdScheduler.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdServerIOHandler.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdYarn.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAntiFreezeBase.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdBuffer.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdIntercept.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCustomTransparentProxy.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSocketHandle.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSocks.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdTCPConnection.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdThread.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdTask.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdThreadSafe.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSchedulerOfThread.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdTCPServer.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCustomTCPServer.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdContext.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdServerIOHandlerStack.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdServerIOHandlerSocket.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdGlobalCore.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSchedulerOfThreadDefault.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStringsUriUtils.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCoderHeader.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdEMailAddress.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHeaderCoderBase.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAllHeaderCoders.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHeaderCoderPlain.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHeaderCoder2022JP.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHeaderCoderIndy.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCoderQuotedPrintable.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAllAuthentications.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAuthenticationNTLM.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAuthenticationSSPI.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdAuthenticationDigest.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStringsOpenSSL.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSSLOpenSSLHeaders.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdNTLM.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdCTypes.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdFIPS.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdStruct.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHash.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdHashMessageDigest.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdSSPI.o
+C:\codetyphon\typhon\components\packages_pl\pl_Indy\lib\x86_64-win64\win32\IdResourceStringsSSPI.o
+)
+GROUP(
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpsysinit.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpsystem.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpwindows.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpfpintres.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpsysutils.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpwindirs.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpshlobj.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpactivex.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpshellapi.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpcommctrl.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-objpas\libimpvarutils.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl\libimpdos.a
+C:\codetyphon\typhon\lcl\units\x86_64-win64\libimplclintf.a
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\libimpwin32int.a
+C:\codetyphon\typhon\lcl\units\x86_64-win64\win32\libimpwin32extra.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpimm.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\winunits-base\libimpcommdlg.a
+C:\codetyphon\typhon\components\packages_lz\lz_Printers\lib\x86_64-win64\win32\libimpwinutilprn.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\libimpwinsock2.a
+C:\codetyphon\fpc\fpc64\units\x86_64-win64\rtl-extra\libimpwinsock.a
+)
+SEARCH_DIR("/usr/i686-pc-cygwin/lib"); SEARCH_DIR("/usr/lib"); SEARCH_DIR("/usr/lib/w32api");
+OUTPUT_FORMAT(pei-x86-64)
+ENTRY(_mainCRTStartup)
+SECTIONS
+{
+  . = SIZEOF_HEADERS;
+  . = ALIGN(__section_alignment__);
+  .text  __image_base__ + ( __section_alignment__ < 0x1000 ? . : __section_alignment__ ) :
+  {
+    __text_start__ = . ;
+    *(.init)
+    *(.text .stub .text.* .gnu.linkonce.t.*)
+    *(SORT(.text$*))
+    *(.glue_7t)
+    *(.glue_7)
+    . = ALIGN(8);
+     ___CTOR_LIST__ = .; __CTOR_LIST__ = . ;
+    LONG (-1);
+    LONG (-1);
+    *(.ctors); *(.ctor); *(SORT(.ctors.*));  LONG (0);
+    LONG (0);
+     ___DTOR_LIST__ = .; __DTOR_LIST__ = . ;
+    LONG (-1);
+    LONG (-1);
+    *(.dtors); *(.dtor); *(SORT(.dtors.*));  LONG (0);
+    LONG (0);
+     *(.fini)
+    PROVIDE (etext = .);
+    *(.gcc_except_table)
+  }
+  .data BLOCK(__section_alignment__) :
+  {
+    __data_start__ = . ;
+    *(.data .data.* .gnu.linkonce.d.* .fpc*)
+    *(.data2)
+    *(SORT(.data$*))
+    *(.jcr)
+    PROVIDE (_tls_index = .);
+    LONG (0);
+    __data_end__ = . ;
+    *(.data_cygwin_nocopy)
+  }
+  .rdata BLOCK(__section_alignment__) :
+  {
+    *(.rdata)
+    *(.rdata.*)
+    *(.rodata .rodata.* .gnu.linkonce.r.*)
+    *(SORT(.rdata$*))
+    *(.eh_frame)
+    ___RUNTIME_PSEUDO_RELOC_LIST__ = .;
+    __RUNTIME_PSEUDO_RELOC_LIST__ = .;
+    *(.rdata_runtime_pseudo_reloc)
+    ___RUNTIME_PSEUDO_RELOC_LIST_END__ = .;
+    __RUNTIME_PSEUDO_RELOC_LIST_END__ = .;
+  }
+  .pdata BLOCK(__section_alignment__) : { *(.pdata) }
+  .bss BLOCK(__section_alignment__) :
+  {
+    __bss_start__ = . ;
+    *(.bss .bss.* .gnu.linkonce.b.*)
+    *(SORT(.bss$*))
+    *(COMMON)
+    __bss_end__ = . ;
+  }
+  .edata BLOCK(__section_alignment__) : { *(.edata) }
+  .idata BLOCK(__section_alignment__) :
+  {
+    SORT(*)(.idata$2)
+    SORT(*)(.idata$3)
+    /* These zeroes mark the end of the import list.  */
+    LONG (0); LONG (0); LONG (0); LONG (0); LONG (0);
+    SORT(*)(.idata$4)
+    SORT(*)(.idata$5)
+    SORT(*)(.idata$6)
+    SORT(*)(.idata$7)
+  }
+  .CRT BLOCK(__section_alignment__) :
+  {
+    ___crt_xc_start__ = . ;
+    *(SORT(.CRT$XC*))  /* C initialization */
+    ___crt_xc_end__ = . ;
+    ___crt_xi_start__ = . ;
+    *(SORT(.CRT$XI*))  /* C++ initialization */
+    ___crt_xi_end__ = . ;
+    ___crt_xl_start__ = . ;
+    *(SORT(.CRT$XL*))  /* TLS callbacks */
+    /* ___crt_xl_end__ is defined in the TLS Directory support code */
+    PROVIDE (___crt_xl_end__ = .);
+    ___crt_xp_start__ = . ;
+    *(SORT(.CRT$XP*))  /* Pre-termination */
+    ___crt_xp_end__ = . ;
+    ___crt_xt_start__ = . ;
+    *(SORT(.CRT$XT*))  /* Termination */
+    ___crt_xt_end__ = . ;
+  }
+  .tls BLOCK(__section_alignment__) :
+  {
+    ___tls_start__ = . ;
+    *(.tls .tls.*)
+    *(.tls$)
+    *(SORT(.tls$*))
+    ___tls_end__ = . ;
+  }
+  .rsrc BLOCK(__section_alignment__) :
+  {
+    *(.rsrc)
+    *(SORT(.rsrc$*))
+  }
+  .reloc BLOCK(__section_alignment__) : { *(.reloc) }
+  .stab BLOCK(__section_alignment__) (NOLOAD) : { *(.stab) }
+  .stabstr BLOCK(__section_alignment__) (NOLOAD) : { *(.stabstr) }
+  .debug_aranges BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_aranges) }
+  .debug_pubnames BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_pubnames) }
+  .debug_info BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_info) *(.gnu.linkonce.wi.*) }
+  .debug_abbrev BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_abbrev) }
+  .debug_line BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_line) }
+  .debug_frame BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_frame) }
+  .debug_str BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_str) }
+  .debug_loc BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_loc) }
+  .debug_macinfo BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_macinfo) }
+  .debug_weaknames BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_weaknames) }
+  .debug_funcnames BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_funcnames) }
+  .debug_typenames BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_typenames) }
+  .debug_varnames BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_varnames) }
+  .debug_ranges BLOCK(__section_alignment__) (NOLOAD) : { *(.debug_ranges) }
+}
