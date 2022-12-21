@@ -1,6 +1,8 @@
 # QuickSpeed
 Test de velocidad que sustituye al test de velocidad de BASpeed
 
+!(ventanaprincipal.png "Ventana principal de QuickSpeed")
+
 **Versión prebeta v0.1.1.171-prebeta-12122022**
 
 * Se añade el código fuente de los  tests de descarga, y se añaden 4 tests de descarga para prueba del programa (bandaancha.eu, ThinksBroadBand, Linode y OVH).
