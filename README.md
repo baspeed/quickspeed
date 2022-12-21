@@ -1,7 +1,10 @@
 # QuickSpeed
 Test de velocidad que sustituye al test de velocidad de BASpeed
 
-!(ventanaprincipal.png "Ventana principal de QuickSpeed")
+![ventanaprincipal](https://user-images.githubusercontent.com/17964494/209017446-fc9124a9-30ec-4a7a-af81-4e1a14005699.png)
+
+**Versión prebeta v0.2.2.206-prebeta-21122022**
+
 
 **Versión prebeta v0.1.1.171-prebeta-12122022**
 
