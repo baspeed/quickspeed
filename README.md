@@ -5,6 +5,12 @@ Test de velocidad que sustituye al test de velocidad de BASpeed
 
 **Versión prebeta v0.2.2.206-prebeta-21122022**
 
+* Se ha añadido un test desde españa (RedIRIS) y otro desde Alemania (Hetzner.de).
+* Se han colocado mucho mejor los textos del test seleccionado en el mapa y la velocidad del velocímetro digital.
+* Se ha añadido la velocidad máxima del test en la parte del título de la ventana de la gráfica de velocidad.
+* Se ha cambiado la gráfica de velocidad, quitando las barras que delimitaban cada 250 Mbps y ahora aparece una barra horizontal que va marcando en todo momento la velocidad máxima del test de velocidad.
+* Se han colocado mucho mejor los textos de las velocidades de cada hilo de descarga simultanea.
+* Se muestra un cuadro de información al final del test o al cancelarlo que informa de la velocidad máxima alcanzada en el test de velocidad.
 
 **Versión prebeta v0.1.1.171-prebeta-12122022**
 
