@@ -530,6 +530,7 @@ object Form1: TForm1
       Height = 18
       Top = 6
       Width = 336
+      Alignment = taCenter
       AutoSize = False
       Caption = 'Test: Ninguno seleccionado actualmente'
       Font.CharSet = ANSI_CHARSET
@@ -539,12 +540,12 @@ object Form1: TForm1
       ParentFont = False
     end
     object BGRALabelFX1: TBGRALabelFX
-      Left = 40
+      Left = 0
       Height = 57
-      Top = 32
-      Width = 233
-      AutoSize = True
-      Caption = '000,00 Mbps'
+      Top = 33
+      Width = 348
+      Align = alBottom
+      Caption = '0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -35
       Font.Name = 'Segoe UI Black'
@@ -574,7 +575,7 @@ object Form1: TForm1
     Height = 138
     Top = 24
     Width = 400
-    Caption = ' Gráfica de velocidad (Mbps) '
+    Caption = ' Gráfica de velocidad (Mbps) - VMax: 0000,00 Mbps'
     ClientHeight = 116
     ClientWidth = 396
     Font.CharSet = ANSI_CHARSET
@@ -593,7 +594,7 @@ object Form1: TForm1
       BaseLine = 0
       BaseLineUnit = jluAbsolute
       DisplayUnits = jduLogical
-      HorizontalGridSize = 250
+      HorizontalGridSize = 1010
       Lines = <      
         item
           Color = clRed
@@ -603,7 +604,7 @@ object Form1: TForm1
       Minimum = 0
       Maximum = 1000
       TotalTimeSteps = 344
-      VerticalGridSize = 5
+      VerticalGridSize = 400
     end
     object Label2: TLabel
       Left = 8
@@ -875,8 +876,9 @@ object Form1: TForm1
       Left = 64
       Height = 34
       Top = 27
-      Width = 55
-      Caption = 'Hilo 1'#13#10'0.0 Mbps'
+      Width = 83
+      Alignment = taCenter
+      Caption = 'Hilo 1'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1072,8 +1074,9 @@ object Form1: TForm1
       Left = 264
       Height = 34
       Top = 27
-      Width = 55
-      Caption = 'Hilo 2'#13#10'0.0 Mbps'
+      Width = 90
+      Alignment = taCenter
+      Caption = 'Hilo 2'#13#10'00000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1269,8 +1272,9 @@ object Form1: TForm1
       Left = 64
       Height = 34
       Top = 94
-      Width = 55
-      Caption = 'Hilo 3'#13#10'0.0 Mbps'
+      Width = 83
+      Alignment = taCenter
+      Caption = 'Hilo 3'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1466,8 +1470,9 @@ object Form1: TForm1
       Left = 264
       Height = 34
       Top = 94
-      Width = 55
-      Caption = 'Hilo 4'#13#10'0.0 Mbps'
+      Width = 83
+      Alignment = taCenter
+      Caption = 'Hilo 4'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1663,8 +1668,9 @@ object Form1: TForm1
       Left = 64
       Height = 34
       Top = 158
-      Width = 55
-      Caption = 'Hilo 5'#13#10'0.0 Mbps'
+      Width = 83
+      Alignment = taCenter
+      Caption = 'Hilo 5'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable
@@ -1859,9 +1865,10 @@ object Form1: TForm1
     object Label12: TLabel
       Left = 264
       Height = 34
-      Top = 160
-      Width = 55
-      Caption = 'Hilo 6'#13#10'0.0 Mbps'
+      Top = 158
+      Width = 83
+      Alignment = taCenter
+      Caption = 'Hilo 6'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -13
       Font.Pitch = fpVariable

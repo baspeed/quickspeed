@@ -104,6 +104,7 @@ var
   hilosdescarga: array[1..6] of TDescarga;    // Array de hilos de descarga
   velocidadtotal: UInt64;                     // Velocidad total (suma de la velocidad de los hilos de descarga)
   testactivo: Boolean;
+  VMax: UInt64;
 
 implementation
 
@@ -119,7 +120,7 @@ begin
      buffermemoria:=TMemoryStream.Create;                              // Crea el buffer en memoria con el tamaño indicado en TAMBUFER
      buffermemoria.SetSize(TAMBUFFER);
      case numero_test of                                               // En caso del valor de numero_test
-          1,3: begin                                                   // 1 o 3 son tests SSL
+          1,3,6,7: begin                                                   // 1 o 3 son tests SSL
                   sslioh:=TIdSSLIOHandlerSocketOpenSSL.Create;         // Crea el manejador de datos SSL para el objeto HTTP
                   sslioh.ConnectTimeout:=5000;                         // 5 segundos de tiempo de espera de conexión antes de error
                   sslioh.ReadTimeout:=5000;                            // 5 segundos de tiempo de espera para lectura de datos antes de eror
@@ -134,8 +135,13 @@ begin
                       web.IOHandler:=ioh;                              // Asigna el manejador de datos al manejador por defecto del objeto HTTP
                  end;
      end;
-     web.Head(enlace);                                                 // Lee la cabecera de datos del archivo
-     tam:=web.Response.ContentLength;                                  // Asigna a tam el tamaño del archivo en el servidor
+     if (numero_test<>7) then                                          // El test de hetzner.de no admite la lectura de cabecera de datos con lo que no podemos obtener el valor del tamaño del archivo de descarga
+        begin
+             web.Head(enlace);                                                 // Lee la cabecera de datos del archivo
+             tam:=web.Response.ContentLength;                                  // Asigna a tam el tamaño del archivo en el servidor
+        end
+     else
+         tam:=104857600;                                               // Se asignan 100 MB al test de hetzner.de que es el tamaño del archivo (se comprueba desde speed.hetzner.de)
      web.OnWork:=@CalculaDatos;                                        // Asigna la rutina que se ejecutará cada vez que se llene el buffer de datos
      ti:=GetTickCount64;                                               // Asigna a ti el tiempo inicial de ejecución del hilo
      try                                                               // Intenta
@@ -218,6 +224,7 @@ var
 begin
      if (testactivo=False) then                                              // Si no hay test de velocidad activo
         begin
+             VMax:=0;
              testactivo:=True;                                               // Variable que indica que hay un test activo a True
              BCButton2.Caption:='Cancelar test de velocidad';                // Cambia texto del botón 2
              BCButton1.Enabled:=False;                                       // Inhabilita el botón 1 para no poder elegir otro test en caso de iniciar el test
@@ -232,7 +239,10 @@ begin
                            2 : hilosdescarga[contadorhilo].enlace:='http://ipv4.download.thinkbroadband.com/100MB.zip';
                            3 : hilosdescarga[contadorhilo].enlace:='https://rbx.proof.ovh.net/files/100Mb.dat';
                            4 : hilosdescarga[contadorhilo].enlace:='http://es.download.nvidia.com/Windows/452.06/452.06-desktop-win10-64bit-international-dch-whql.exe';
-                           5 : hilosdescarga[contadorhilo].enlace:='http://speedtest.london.linode.com/100MB-london.bin'
+                           5 : hilosdescarga[contadorhilo].enlace:='http://speedtest.london.linode.com/100MB-london.bin';
+                           6 : hilosdescarga[contadorhilo].enlace:='https://ftp.rediris.es/mirror/OpenSuSE/distribution/openSUSE-stable/live/openSUSE-Leap-15.4-Rescue-CD-x86_64-Build31.38-Media.iso';
+                           7 : hilosdescarga[contadorhilo].enlace:='https://speed.hetzner.de/100MB.bin';
+
                       end;
                       hilosdescarga[contadorhilo].Start;                    // Inicia el hilo de ejecución
                  end
@@ -289,15 +299,23 @@ begin
          begin
               velocidadtotal:=velocidadtotal+hilosdescarga[contadorhilos].velocidad; // Realiza la suma de velocidades de todos los hilos de ejecución
          end;
-     Label7.Caption:='Hilo 1'+#13+FloatToStrF(hilosdescarga[1].velocidad/1000,fffixed,10,2)+' Mbps';    // Escribe las velocidades de cada hilo en su lugar correspondiente
-     Label8.Caption:='Hilo 2'+#13+FloatToStrF(hilosdescarga[2].velocidad/1000,fffixed,10,2)+' Mbps';
-     Label9.Caption:='Hilo 3'+#13+FloatToStrF(hilosdescarga[3].velocidad/1000,fffixed,10,2)+' Mbps';
-     Label10.Caption:='Hilo 4'+#13+FloatToStrF(hilosdescarga[4].velocidad/1000,fffixed,10,2)+' Mbps';
-     Label11.Caption:='Hilo 5'+#13+FloatToStrF(hilosdescarga[5].velocidad/1000,fffixed,10,2)+' Mbps';
-     Label12.Caption:='Hilo 6'+#13+FloatToStrF(hilosdescarga[6].velocidad/1000,fffixed,10,2)+' Mbps';
-     DTThemedGauge1.Position:=velocidadtotal div 1000;                                         // Actualiza el velocímetro con la velocidad actual del test
-     BGRALabelFX1.Caption:=FloatToStrF(velocidadtotal/1000,fffixed,10,2)+' Mbps';              // Imprime la velocidad actual del test
-     JVSimScope1.Lines[0].Position:=velocidadtotal div 1000;                                   // Actualiza la gráfica de velocidad con la velocidad actual del test
+     Label7.Caption:='Hilo 1'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';         // Escribe las velocidades de cada hilo en su lugar correspondiente
+     Label8.Caption:='Hilo 2'+#13+FormatFloat('0000.00',hilosdescarga[2].velocidad/1000)+' Mbps';
+     Label9.Caption:='Hilo 3'+#13+FormatFloat('0000.00',hilosdescarga[3].velocidad/1000)+' Mbps';
+     Label10.Caption:='Hilo 4'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';
+     Label11.Caption:='Hilo 5'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';
+     Label12.Caption:='Hilo 6'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';
+     DTThemedGauge1.Position:=velocidadtotal div 1000;
+     BGRALabelFX1.Caption:=FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';                 // Imprime la velocidad actual del test
+     if (velocidadtotal>VMax) then                                                             // Si la velocidad del test > velocidad máxima registrada hasta ese momento entonces
+        begin
+             VMax:=velocidadtotal;
+             JVSimScope1.BaseLine:=VMax div 1000;                                              // Pone la barra que indica la máxima velocidad en la nueva velocidad máxima
+             JVSimScope1.UpdateScope;                                                          // Se actualiza la gráfica
+             GroupBox2.Caption:='Gráfica de velocidad (Mbps) - VMax: '+FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';    // Se actualiza la velocidad máxima en el título del grupo de la gráfica de velocidad
+        end;
+     JVSimScope1.Lines[0].Position:=velocidadtotal div 1000;                                   // Imprime la velocidad actual del test en la gráfica de velocidad
+     JVSimScope1.UpdateScope;                                                                  // Actualiza la gráfica de velocidad (la repinta) para que el gráfico salga correctamente
      tpctotal:=0;                                                                              // Tanto por ciento total a 0
      for contadorhilos:=1 to NUMHILOS do                                                       // Desde 1 hasta NUMHILOS (6 por defecto en el código fuente original)
          tpctotal:=tpctotal+hilosdescarga[contadorhilos].tpc;                                  // Actualiza el tanto por ciento total, realizando la suma de todos los tantos por ciento y diviendo el valor entre el número de hilos (6)
@@ -313,6 +331,8 @@ begin
              JvSimScope1.Active:=False;                                                        // Desactiva la gráfica de velocidad
              cancelartestvelocidad:=False;                                                     // Pone el valor de Cancelar el test de velocidad a False
              testactivo:=False;                                                                // Ya no está activo el test de velocidad así que el test activo a False
+             // Se muestra un cuadro de diálogo mostrando la velocidad máxima alcanzada en el test si este ha acabado con éxito o se ha cancelado por el usuario
+             MessageDlg('Test de velocidad terminado','Test de velocidad terminado.'+#13+'La velocidad máxima alcanzada ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.',MtInformation,[MbOK],0,MbOK);
         end;
 end;
 

@@ -79,6 +79,12 @@ begin
      T:=TGpsPoint.Create(-0.12800499999998327,51.50812900000004);    // 5o punto GPS -> test de LINODE (Londres, Inglaterra)
      T.Name:='Test de LINODE'+#13+'(Londres, Inglaterra)'; // Título del test de velocidad
      MapView1.GPSItems.Add(T,5); // Añade test de velocidad al mapa
+     T:=TGpsPoint.Create(-3.6940925,40.4478561);    // 6o punto GPS -> test de RedIris.es (Madrid, España)
+     T.Name:='Test de RedIris.es'+#13+'(Madrid, España)'; // Título del test de velocidad
+     MapView1.GPSItems.Add(T,6); // Añade test de velocidad al mapa
+     T:=TGpsPoint.Create(11.0140584,49.4494552);    // 7o punto GPS -> test de RedIris.es (Madrid, España)
+     T.Name:='Test de Hetzner.de'+#13+'(Núremberg, Alemania)'; // Título del test de velocidad
+     MapView1.GPSItems.Add(T,7); // Añade test de velocidad al mapa
 end;
 
 
@@ -117,8 +123,18 @@ begin
                       end;
                   5 : begin // Si se ha pulsado el test de LINODE - Londres
                            BCButton1.Caption:='Seleccionar test desde LINODE (Londres, Inglaterra)'; // Cambia el texto del botón de selección de test
-                           numero_test:=4; // Cambia el número de test activo
+                           numero_test:=5; // Cambia el número de test activo
                            cadena_test:='Test desde LINODE (Londres, Inglaterra)'; // Cambia la cadena de texto a mostrar en la ventana principal
+                      end;
+                  6 : begin // Si se ha pulsado el test de Hertzner.de - Alemania
+                           BCButton1.Caption:='Seleccionar test desde RedIris.es (Madrid, España)'; // Cambia el texto del botón de selección de test
+                           numero_test:=6; // Cambia el número de test activo
+                           cadena_test:='Test desde RedIris.es (Madrid, España)'; // Cambia la cadena de texto a mostrar en la ventana principal
+                      end;
+                  7 : begin // Si se ha pulsado el test de Hertzner.de - Alemania
+                           BCButton1.Caption:='Seleccionar test desde Hetzner.de (Núremberg, Alemania)'; // Cambia el texto del botón de selección de test
+                           numero_test:=7; // Cambia el número de test activo
+                           cadena_test:='Test desde Hetzner.de (Núremberg, Alemania)'; // Cambia la cadena de texto a mostrar en la ventana principal
                       end;
              end;
              BCButton1.Enabled:=True; // Se activa el botón de selección de test de velocidad
