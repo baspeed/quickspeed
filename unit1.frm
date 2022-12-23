@@ -545,6 +545,7 @@ object Form1: TForm1
       Top = 33
       Width = 348
       Align = alBottom
+      AutoSize = True
       Caption = '0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
       Font.Height = -35

@@ -17,9 +17,9 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <MinorVersionNr Value="2"/>
-      <RevisionNr Value="2"/>
-      <BuildNr Value="207"/>
+      <MinorVersionNr Value="3"/>
+      <RevisionNr Value="4"/>
+      <BuildNr Value="232"/>
       <Language Value="040A"/>
       <Attributes pvaDebug="True"/>
       <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.1"/>

@@ -120,14 +120,14 @@ begin
      buffermemoria:=TMemoryStream.Create;                              // Crea el buffer en memoria con el tamaño indicado en TAMBUFER
      buffermemoria.SetSize(TAMBUFFER);
      case numero_test of                                               // En caso del valor de numero_test
-          1,3,6,7: begin                                                   // 1 o 3 son tests SSL
+          1,3,6,7,8,9,10,11,12,13: begin                               // Números de tests que utilizan protocolo SSL
                   sslioh:=TIdSSLIOHandlerSocketOpenSSL.Create;         // Crea el manejador de datos SSL para el objeto HTTP
                   sslioh.ConnectTimeout:=5000;                         // 5 segundos de tiempo de espera de conexión antes de error
                   sslioh.ReadTimeout:=5000;                            // 5 segundos de tiempo de espera para lectura de datos antes de eror
                   sslioh.RecvBufferSize:=TAMBUFFER;                    // Tamaño del buffer de recepción
                   web.IOHandler:=sslioh;                               // Asigna el manejador de datos SSL al manejador por defecto del objeto HTTP
              end;
-          2,4,5 : begin                                                  // 1 y 4 son tests normales (HHTP sin SSL)
+          2,4,5 : begin                                                // Números de tests que utilizan HTTP normal (sin SSL)
                       ioh:=TIdIOHandlerStack.Create;                   // Crea el manejador de datos
                       ioh.ConnectTimeout:=5000;                        // 5 segundos de tiempo de espera de conexión antes de error
                       ioh.ReadTimeout:=5000;                           // 5 segundos de tiempo de espera para lectura de datos antes de error
@@ -141,7 +141,8 @@ begin
              tam:=web.Response.ContentLength;                                  // Asigna a tam el tamaño del archivo en el servidor
         end
      else
-         tam:=104857600;                                               // Se asignan 100 MB al test de hetzner.de que es el tamaño del archivo (se comprueba desde speed.hetzner.de)
+         if (numero_test=7) then
+            tam:=104857600;                                               // Se asignan 100 MB al test de hetzner.de que es el tamaño del archivo (se comprueba desde speed.hetzner.de
      web.OnWork:=@CalculaDatos;                                        // Asigna la rutina que se ejecutará cada vez que se llene el buffer de datos
      ti:=GetTickCount64;                                               // Asigna a ti el tiempo inicial de ejecución del hilo
      try                                                               // Intenta
@@ -242,7 +243,12 @@ begin
                            5 : hilosdescarga[contadorhilo].enlace:='http://speedtest.london.linode.com/100MB-london.bin';
                            6 : hilosdescarga[contadorhilo].enlace:='https://ftp.rediris.es/mirror/OpenSuSE/distribution/openSUSE-stable/live/openSUSE-Leap-15.4-Rescue-CD-x86_64-Build31.38-Media.iso';
                            7 : hilosdescarga[contadorhilo].enlace:='https://speed.hetzner.de/100MB.bin';
-
+                           8 : hilosdescarga[contadorhilo].enlace:='https://testvelocidadvld.orange.es:8080/speedtest/random4000x4000.jpg';
+                           9 : hilosdescarga[contadorhilo].enlace:='https://lon.speedtest.clouvider.net/1g.bin';
+                           10 : hilosdescarga[contadorhilo].enlace:='https://man.speedtest.clouvider.net/1g.bin';
+                           11 : hilosdescarga[contadorhilo].enlace:='https://fra.speedtest.clouvider.net/1g.bin';
+                           12 : hilosdescarga[contadorhilo].enlace:='https://test2.fibertelecom.it/512MB.zip';
+                           13 : hilosdescarga[contadorhilo].enlace:='https://nyc.speedtest.clouvider.net/1g.bin';
                       end;
                       hilosdescarga[contadorhilo].Start;                    // Inicia el hilo de ejecución
                  end
