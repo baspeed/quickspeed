@@ -3,6 +3,13 @@ Test de velocidad que sustituye al test de velocidad de BASpeed
 
 ![ventanaprincipal](https://user-images.githubusercontent.com/17964494/209017446-fc9124a9-30ec-4a7a-af81-4e1a14005699.png)
 
+**Versión prebeta v0.3.4.231-prebeta-21122022**
+
+* Añadidos unos cuantos tests más (tanto españoles, como europeos y norteamericanos)
+* Se ha añadido una lista de selección en la pantalla de selección de test para los que no quieran perder tiempo buscando los tests en el mapa los pueden seleccionar directamente de la lista. Una vez seleccionado el test, el mapa se centra directamente en la posición del test de velocidad automáticamente.
+* La lista se ofrece con las banderas de los países donde están situados los servidores.
+* Pequeñas optimizaciones de código interno.
+
 **Versión prebeta v0.2.2.206-prebeta-21122022**
 
 * Se ha añadido un test desde españa (RedIRIS) y otro desde Alemania (Hetzner.de).
