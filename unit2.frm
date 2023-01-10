@@ -292,7 +292,6 @@ object Form2: TForm2
       0000000000000000000000000000000000000000000000000000
     }
     POIImagesWidth = 48
-    UseThreads = True
     OnMouseDown = MapView1MouseDown
   end
   object BCButton1: TBCButton

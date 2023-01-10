@@ -16,13 +16,12 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <AutoIncrementBuild Value="True"/>
-      <MinorVersionNr Value="3"/>
-      <RevisionNr Value="4"/>
-      <BuildNr Value="232"/>
+      <MinorVersionNr Value="4"/>
+      <RevisionNr Value="5"/>
+      <BuildNr Value="282"/>
       <Language Value="040A"/>
       <Attributes pvaDebug="True"/>
-      <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.1"/>
+      <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.4"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -35,6 +34,9 @@
       <FormatVersion Value="2"/>
     </RunParams>
     <RequiredPackages>
+      <Item>
+        <PackageName Value="lz_Industrial"/>
+      </Item>
       <Item>
         <PackageName Value="pl_Graphics32"/>
       </Item>

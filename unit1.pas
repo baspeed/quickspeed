@@ -2,7 +2,7 @@
 // Test de velocidad de internet QuickSpeed (antiguo BASpeed)
 // Creado por José Ignacio Legido (djnacho de bandaancha.eu), 2022
 // Licencia GPL v3
-// Versión 0.1.0 prebeta
+// Versión 0.4.5.282 prebeta
 //
 
 
@@ -16,10 +16,10 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
-  dtthemedgauge, BCButton, BGRALabelFX, BGRACustomDrawn,
-  JvSimScope, RxVersInfo, HtmlView, LCLType, LCLIntF, ComCtrls, HtmlGlobals,
-  Unit2, cySimpleGauge, IdHTTP, IdIOHandler, IdIOHandlerStack,
-  IdSSLOpenSSL, IdComponent;
+  dtthemedgauge, BCButton, BGRACustomDrawn, RxVersInfo, HtmlView, LCLType,
+  LCLIntF, ComCtrls, HtmlGlobals, Unit2, TplLogGraphUnit,
+  indLCDDisplay, cySimpleGauge, IdHTTP, IdIOHandler, IdIOHandlerStack,
+  IdSSLOpenSSL, IdComponent, IdSSLOpenSSLHeaders;
 
 type
 
@@ -30,7 +30,6 @@ type
     BCButton1: TBCButton;                              // Botón de seleccionar test en el mapa
     BCButton2: TBCButton;                              // Botón de iniciar el test de velocidad
     Bevel1: TBevel;                                    // Linea divisoria entre pantalla de test y panel informativo
-    BGRALabelFX1: TBGRALabelFX;                        // Velocidad en Mbps en efecto especial de texto
     cySimpleGauge1: TcySimpleGauge;
     DTThemedGauge1: TDTThemedGauge;                    // Velocímetro
     GroupBox1: TGroupBox;                              // Datos generales de velocidad del test de velocidad
@@ -43,7 +42,7 @@ type
     Image4: TImage;                                    // Imagen / icono de la información del hilo 4 de descarga
     Image5: TImage;                                    // Imagen / icono de la información del hilo 5 de descarga
     Image6: TImage;                                    // Imagen / icono de la información del hilo 6 de descarga
-    JvSimScope1: TJvSimScope;                          // Componente que muestra la gráfica de velocidad instantánea
+    ImageList1: TImageList;
     Label1: TLabel;                                    // Test de velocidad seleccionado en la ventana de selección de test
     Label10: TLabel;                                   // Datos hilo 4 de descarga
     Label11: TLabel;                                   // Datos hilo 5 de descarga
@@ -57,6 +56,8 @@ type
     Label7: TLabel;                                    // Datos hilo 1 de descarga
     Label8: TLabel;                                    // Datos hilo 2 de descarga
     Label9: TLabel;                                    // Datos hilo 3 de descarga
+    LCDDisplay1: TLCDDisplay;                          // Display digital de velocidad
+    plLogGraph1: TplLogGraph;                          // Gráfica de velocidad
     RxVersionInfo1: TRxVersionInfo;                    // Obtiene la versión del archivo ejecutable QuickSpeed.exe
     Timer1: TTimer;
     procedure BCButton1Click(Sender: TObject);         // Llama a rutina que permite seleccionar un test de velocidad de un mapa
@@ -195,12 +196,20 @@ var
 
 begin
      testactivo:=False;                                    // No hay ningún test de velocidad activo
-     cancelartestvelocidad:=False;
+     cancelartestvelocidad:=False;                         // Pone la variable que indica que se ha cancelado el test al valor por defecto de inicio (False)
      Form1.Width:=368;                                     // Ancho de la ventana 368 pixels
-     JvSimScope1.VerticalGridSize:=LongInt.MaxValue;       // Alto de la cuadrícula de la gráfica = Valor más alto de LongInt (para que no se vea)
-     Ventana_Expandida:=False;                             // Se indica a la aplicación que el panel informativo está oculto
-     Age:=FileAge('QuickSpeed.exe');                       // Se toma el valor de la fecha de modificación de QuickSpeed.exe en la variable Age
-     HTMLViewer1.Text:=UnicodeString('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+DateToStr(FileDateToDateTime(Age))+')</b>.<br>'+
+     Ventana_Expandida:=False;                             // La ventana se inicializa con el valor de ventana compacta (sin expandir)
+     {$IFDEF UNIX}                                         // Si se compila el programa para Linux
+     Age:=FileAge('./QuickSpeed');                         // Fecha de modificación del ejecutable en formato de 4 bytes
+     IdOpenSSLSetLibPath('./');                            // Donde tiene que encontrar el ejecutable las librerías para acceder al protocolo HTTPS
+     Form1.Caption:='QuickSpeed Linux Edition';            // Cambia el título de la ventana para que vea que la edición es la de Linux
+     {$ENDIF}
+     {$IFDEF WINDOWS}
+     Age:=FileAge('.\QuickSpeed.exe');                       // Fecha de modificación del ejecutable en formato de 4 bytes
+     IdOpenSSLSetLibPath('.\');                              // Donde tiene que encontrar el ejecutable las librerías para acceder al protocolo HTTPS
+     Form1.Caption:='QuickSpeed Windows Edition';            // Cambia el título de la ventana para que vea que la edición es la de Windows
+     {$ENDIF}
+     HTMLViewer1.Text:=UnicodeString('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+')</b><br>'+
                        'Creado por José Ignacio Legido (usuario <b><a href="https://bandaancha.eu/usuarios/djnacho-60320">djnacho</a></b> de <b><a href="https://bandaancha.eu">bandaancha.eu</a></b>).<br><br>'+
                        'Este test de velocidad ha sido creado usando <b><a href="https://www.pilotlogic.com">CodeTyphon</a></b>, un IDE de código abierto para <b><a href="https://www.freepascal.org">freepascal</a></b>.<br>'+
                        'Este programa tiene licencia <b><a href="https://www.gnu.org/licenses/gpl-3.0-standalone">GPL v3</a></b>.<br>'+
@@ -228,11 +237,11 @@ begin
              VMax:=0;
              testactivo:=True;                                               // Variable que indica que hay un test activo a True
              BCButton2.Caption:='Cancelar test de velocidad';                // Cambia texto del botón 2
+             BCButton2.ImageIndex:=1;                                        // Cambia la imagen del botón para mostrar la imagen de cancelar
              BCButton1.Enabled:=False;                                       // Inhabilita el botón 1 para no poder elegir otro test en caso de iniciar el test
              for contadorhilo:=1 to NUMHILOS do                              // Desde 1 hasta el número de hilos predeterminado en el código fuente
                  hilosdescarga[contadorhilo]:=TDescarga.Create(True);        // Crea todos los hilos de descarga (6 simultaneos)
              Timer1.Enabled:=True;                                           // Inicia el Timer
-             JVSimScope1.Active:=True;                                       // Inicia la gráfica de velocidad
              for contadorhilo:=1 to NUMHILOS do                              // Desde el hilo 1 hasta el hilo NUMMAX (6 por defecto en el código fuente original)
                  begin
                       case numero_test of                                    // Dependiendo del número de test, indica al hilo de ejecución un enlace o otro
@@ -312,16 +321,13 @@ begin
      Label11.Caption:='Hilo 5'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';
      Label12.Caption:='Hilo 6'+#13+FormatFloat('0000.00',hilosdescarga[1].velocidad/1000)+' Mbps';
      DTThemedGauge1.Position:=velocidadtotal div 1000;
-     BGRALabelFX1.Caption:=FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';                 // Imprime la velocidad actual del test
+     LCDDisplay1.Lines[0]:=FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';                 // Imprime la velocidad actual del test
      if (velocidadtotal>VMax) then                                                             // Si la velocidad del test > velocidad máxima registrada hasta ese momento entonces
         begin
              VMax:=velocidadtotal;
-             JVSimScope1.BaseLine:=VMax div 1000;                                              // Pone la barra que indica la máxima velocidad en la nueva velocidad máxima
-             JVSimScope1.UpdateScope;                                                          // Se actualiza la gráfica
              GroupBox2.Caption:='Gráfica de velocidad (Mbps) - VMax: '+FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';    // Se actualiza la velocidad máxima en el título del grupo de la gráfica de velocidad
         end;
-     JVSimScope1.Lines[0].Position:=velocidadtotal div 1000;                                   // Imprime la velocidad actual del test en la gráfica de velocidad
-     JVSimScope1.UpdateScope;                                                                  // Actualiza la gráfica de velocidad (la repinta) para que el gráfico salga correctamente
+     plLogGraph1.Add(velocidadtotal div 1000);                                                 // Añade valor a la gráfica de velocidad (traza linea de valor de velocidad y mueve datos hacia la izquierda)
      tpctotal:=0;                                                                              // Tanto por ciento total a 0
      for contadorhilos:=1 to NUMHILOS do                                                       // Desde 1 hasta NUMHILOS (6 por defecto en el código fuente original)
          tpctotal:=tpctotal+hilosdescarga[contadorhilos].tpc;                                  // Actualiza el tanto por ciento total, realizando la suma de todos los tantos por ciento y diviendo el valor entre el número de hilos (6)
@@ -331,10 +337,10 @@ begin
         begin
              BCButton1.Enabled:=True;                                                          // Botón 1 habilitado
              BCButton2.Caption:='Iniciar test de velocidad';                                   // Cambia texto del botón 2
+             BCButton2.ImageIndex:=0;                                                          // Cambia la imagen del botón para mostrar la imagen de iniciar el test de velocidad
              for contadorhilos:=1 to NUMHILOS do                                               // Desde el hilo 1 hasta el numero máximo de hilos (6)
                  hilosdescarga[contadorhilos].Free;                                            // Libera la memoria de los hilos de ejecución simultanea
              timer1.Enabled:=False;                                                            // Para el timer para no seguir actualizando datos en la ventana principal
-             JvSimScope1.Active:=False;                                                        // Desactiva la gráfica de velocidad
              cancelartestvelocidad:=False;                                                     // Pone el valor de Cancelar el test de velocidad a False
              testactivo:=False;                                                                // Ya no está activo el test de velocidad así que el test activo a False
              // Se muestra un cuadro de diálogo mostrando la velocidad máxima alcanzada en el test si este ha acabado con éxito o se ha cancelado por el usuario

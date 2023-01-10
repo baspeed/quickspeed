@@ -197,6 +197,8 @@ end;
 procedure TForm2.FormActivate(Sender: TObject);
 begin
      MapView1.Active:=True; // Activa el mapa de selección de tests de velocidad
+     ComboBoxEx1Change(self);   // Activa el cambio de localizacion del mapa en función del test seleccionado de la lista
+     MapView1.Update;          // Actualiza el mapa de tests para visualizar correctamente la localización de los tests
 end;
 
 // Rutina que se ejecuta cuando se pulsa el botón de anulación de selección del test de velocidad
