@@ -1,5 +1,5 @@
 # QuickSpeed
-Test de velocidad que sustituye al test de velocidad de BASpeed
+Test de velocidad que sustituye al test de velocidad de BASpeed. Programado completamente en [CodeTyphon](https://www.pilotlogic.com/sitejoom/index.php/projects/codetyphon-studio.html)
 
 ![ventanaprincipal](https://user-images.githubusercontent.com/17964494/209017446-fc9124a9-30ec-4a7a-af81-4e1a14005699.png)
 
