@@ -3,6 +3,13 @@ Test de velocidad que sustituye al test de velocidad de BASpeed. Programado comp
 
 ![ventanaprincipal](https://user-images.githubusercontent.com/17964494/209017446-fc9124a9-30ec-4a7a-af81-4e1a14005699.png)
 
+**Versión prebeta 0.4.5.282-prebeta-10012023**
+
+* Primera versión que se lanza de forma simultánea para Windows y Linux.
+* Nuevo display digital para lectura de la velocidad.
+* Nueva gráfica de velocidad más parecida a otras que ya aparecieron en versiones anteriores de BASpeed.
+* Código separado en la inicialización de la ventana principal para inicializar el programa en un entorno Linux o Windows, dependiendo de que sistema operativo se esté usando para compilar el programa.
+
 **Versión prebeta v0.3.4.231-prebeta-23122022**
 
 * Añadidos unos cuantos tests más (tanto españoles, como europeos y norteamericanos)
