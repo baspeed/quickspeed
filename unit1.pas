@@ -62,6 +62,7 @@ type
     Timer1: TTimer;
     procedure BCButton1Click(Sender: TObject);         // Llama a rutina que permite seleccionar un test de velocidad de un mapa
     procedure BCButton2Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);             // Rutina que se ejecuta al crear la ventana (antes de visualizarla)
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);  // Rutina que permite examinar las pulsaciones del teclado dentro de la aplicación
     procedure G32_ProgressBar1DragDrop(Sender, Source: TObject; X, Y: Integer);
@@ -266,6 +267,11 @@ begin
          cancelartestvelocidad:=True;                                       // Si se pulsa el botón con el test iniciado se activa esta variable para detener el test
 end;
 
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+     DTThemedGauge1.Update;
+end;
+
 // Rutina que permite conocer todas las pulsaciones de teclas dentro de la aplicación
 
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
@@ -275,13 +281,13 @@ begin
         case Ventana_Expandida of             // Se verifica la variable Ventana_Expandida
              False             : begin        // Si está oculta
                                       Ventana_Expandida:=True; // Se pone la variable a True
-                                      Form1.Width:=801;        // Expande la ventana para que aparezca el panel informativo
-                                      Form1.Left:=(Screen.DesktopWidth-Form1.Width) div 2;    // Centra la ventana en el escritorio
+                                      Form1.Width:=DTThemedGauge1.Width+GroupBox3.Width+30;        // Expande la ventana para que aparezca el panel informativo
+                                      Form1.Left:=(Screen.DesktopWidth-Form1.Width) div 2;         // Centra la ventana en el escritorio
                                  end;
              True              : begin        // Si está visible
                                       Ventana_Expandida:=False; // Se pone la variable a False
-                                      Form1.Width:=368;         // Vuelve a poner el ancho de ventana a 368 pixels para ocultar el panel informativo
-                                      Form1.Left:=(Screen.DesktopWidth-Form1.Width) div 2; // Centra la ventana en el escritorio
+                                      Form1.Width:=DTThemedGauge1.Width;                           // Vuelve a poner el ancho de ventana a la anchura original para ocultar el panel informativo
+                                      Form1.Left:=(Screen.DesktopWidth-Form1.Width) div 2;         // Centra la ventana en el escritorio
                                  end;
         end;
 end;

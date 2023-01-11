@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 473
+  Left = 470
   Height = 598
-  Top = 227
+  Top = 228
   Width = 801
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -10,6 +10,7 @@ object Form1: TForm1
   ClientWidth = 801
   Color = clWhite
   KeyPreview = True
+  OnActivate = FormActivate
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   Position = poDesktopCenter
@@ -385,8 +386,8 @@ object Form1: TForm1
     Top = 352
     Width = 352
     Caption = ' Datos del test de velocidad '
-    ClientHeight = 90
-    ClientWidth = 348
+    ClientHeight = 94
+    ClientWidth = 350
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Name = 'Segoe UI'
@@ -442,8 +443,8 @@ object Form1: TForm1
     Top = 24
     Width = 400
     Caption = ' Gráfica de velocidad (Mbps) - VMax: 0000,00 Mbps'
-    ClientHeight = 116
-    ClientWidth = 396
+    ClientHeight = 121
+    ClientWidth = 398
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Pitch = fpVariable
@@ -454,7 +455,7 @@ object Form1: TForm1
     TabOrder = 1
     object Label2: TLabel
       Left = 8
-      Height = 17
+      Height = 16
       Top = 8
       Width = 28
       Caption = '1000'
@@ -467,7 +468,7 @@ object Form1: TForm1
     end
     object Label3: TLabel
       Left = 8
-      Height = 17
+      Height = 16
       Top = 32
       Width = 21
       Caption = '750'
@@ -480,7 +481,7 @@ object Form1: TForm1
     end
     object Label4: TLabel
       Left = 8
-      Height = 17
+      Height = 16
       Top = 56
       Width = 21
       Caption = '500'
@@ -493,7 +494,7 @@ object Form1: TForm1
     end
     object Label5: TLabel
       Left = 8
-      Height = 17
+      Height = 16
       Top = 80
       Width = 21
       Caption = '250'
@@ -506,7 +507,7 @@ object Form1: TForm1
     end
     object Label6: TLabel
       Left = 8
-      Height = 17
+      Height = 16
       Top = 96
       Width = 7
       Caption = '0'
@@ -540,13 +541,13 @@ object Form1: TForm1
     end
   end
   object GroupBox3: TGroupBox
-    Left = 390
+    Left = 392
     Height = 224
     Top = 184
     Width = 402
     Caption = ' Datos de hilos de descarga / subida '
-    ClientHeight = 202
-    ClientWidth = 398
+    ClientHeight = 207
+    ClientWidth = 400
     Font.CharSet = ANSI_CHARSET
     Font.Height = -13
     Font.Pitch = fpVariable
@@ -742,9 +743,9 @@ object Form1: TForm1
     end
     object Label7: TLabel
       Left = 64
-      Height = 34
+      Height = 32
       Top = 27
-      Width = 83
+      Width = 81
       Alignment = taCenter
       Caption = 'Hilo 1'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -940,9 +941,9 @@ object Form1: TForm1
     end
     object Label8: TLabel
       Left = 264
-      Height = 34
+      Height = 32
       Top = 27
-      Width = 90
+      Width = 88
       Alignment = taCenter
       Caption = 'Hilo 2'#13#10'00000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1138,9 +1139,9 @@ object Form1: TForm1
     end
     object Label9: TLabel
       Left = 64
-      Height = 34
+      Height = 32
       Top = 94
-      Width = 83
+      Width = 81
       Alignment = taCenter
       Caption = 'Hilo 3'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1336,9 +1337,9 @@ object Form1: TForm1
     end
     object Label10: TLabel
       Left = 264
-      Height = 34
+      Height = 32
       Top = 94
-      Width = 83
+      Width = 81
       Alignment = taCenter
       Caption = 'Hilo 4'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1534,9 +1535,9 @@ object Form1: TForm1
     end
     object Label11: TLabel
       Left = 64
-      Height = 34
+      Height = 32
       Top = 158
-      Width = 83
+      Width = 81
       Alignment = taCenter
       Caption = 'Hilo 5'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1732,9 +1733,9 @@ object Form1: TForm1
     end
     object Label12: TLabel
       Left = 264
-      Height = 34
+      Height = 32
       Top = 158
-      Width = 83
+      Width = 81
       Alignment = taCenter
       Caption = 'Hilo 6'#13#10'0000,00 Mbps'
       Font.CharSet = ANSI_CHARSET
@@ -1775,7 +1776,7 @@ object Form1: TForm1
     AutoSize = False
     BorderSpacing.Left = 10
     Caption = 'CTRL+I->Abre / Cierra panel informativo'
-    Font.Height = 16
+    Font.Height = 12
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
   end
