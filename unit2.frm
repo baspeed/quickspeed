@@ -149,14 +149,14 @@ object Form2: TForm2
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poDesktopCenter
-  LCLVersion = '7.9'
+  LCLVersion = '8.0'
   object MapView1: TMapView
     Left = 9
     Height = 378
     Top = 7
     Width = 984
     DownloadEngine = MapView1.BuiltInDLE
-    DrawingEngine = MapView1.BuiltInDE
+    DrawingEngine = MvRGBGraphicsDrawingEngine1
     Font.Color = clBlack
     MapProvider = 'Google Maps'
     POIImage.Data = {
@@ -292,6 +292,7 @@ object Form2: TForm2
       0000000000000000000000000000000000000000000000000000
     }
     POIImagesWidth = 48
+    UseThreads = True
     OnMouseDown = MapView1MouseDown
   end
   object BCButton1: TBCButton
@@ -751,7 +752,7 @@ object Form2: TForm2
     Height = 38
     Top = 398
     Width = 985
-    DropDownCount = 5
+    DropDownCount = 4
     Font.Height = -16
     Font.Style = [fsBold]
     Images = ImageList1
@@ -812,6 +813,7 @@ object Form2: TForm2
     ItemIndex = 0
     OnChange = ComboBoxEx1Change
     ParentFont = False
+    Style = csExDropDownList
     TabOrder = 1
   end
   object ImageList1: TImageList
@@ -1066,5 +1068,9 @@ object Form2: TForm2
       141A94264D58C03316FBFF0D55543EA79A1B2FA19A1BA9B3F6FF5351C6162606
       2BCC8DF5F9299FAE215DFF07A9D2A051
     }
+  end
+  object MvRGBGraphicsDrawingEngine1: TMvRGBGraphicsDrawingEngine
+    Left = 312
+    Top = 32
   end
 end

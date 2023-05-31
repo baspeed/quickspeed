@@ -16,9 +16,10 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MinorVersionNr Value="4"/>
-      <RevisionNr Value="5"/>
-      <BuildNr Value="290"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="6"/>
+      <RevisionNr Value="8"/>
+      <BuildNr Value="490"/>
       <Language Value="040A"/>
       <Attributes pvaDebug="True"/>
       <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.4"/>
@@ -35,28 +36,31 @@
     </RunParams>
     <RequiredPackages>
       <Item>
-        <PackageName Value="lz_Industrial"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_Graphics32"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_ExControls"/>
+        <PackageName Value="pl_HtmlViewer"/>
       </Item>
       <Item>
         <PackageName Value="pl_Cindy"/>
       </Item>
       <Item>
+        <PackageName Value="lz_Industrial"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_ExControls"/>
+      </Item>
+      <Item>
         <PackageName Value="pl_RX"/>
+      </Item>
+      <Item>
+        <PackageName Value="pl_MiniLib"/>
+      </Item>
+      <Item>
+        <PackageName Value="adFCL"/>
       </Item>
       <Item>
         <PackageName Value="pl_Indy"/>
       </Item>
       <Item>
         <PackageName Value="pl_MapViewer"/>
-      </Item>
-      <Item>
-        <PackageName Value="pl_HtmlViewer"/>
       </Item>
       <Item>
         <PackageName Value="pl_JVCL"/>
@@ -105,9 +109,6 @@
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
-      <Debugging>
-        <GenerateDebugInfo Value="False"/>
-      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>

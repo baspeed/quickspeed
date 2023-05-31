@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComboEx, mvMapViewer,
-  mvTypes, BCButton, mvGPSObj, mvEngine;
+  mvTypes, BCButton, mvGPSObj, mvEngine, mvDE_RGBGraphics;
 
 type
 
@@ -26,6 +26,7 @@ type
     ComboBoxEx1: TComboBoxEx;
     ImageList1: TImageList;
     MapView1: TMapView;                                                       // Mapa de selección de tests
+    MvRGBGraphicsDrawingEngine1: TMvRGBGraphicsDrawingEngine;
     procedure BCButton1Click(Sender: TObject);                                // Rutina que ocurre al pulsar el botón de selección de test de velocidad
     procedure BCButton2Click(Sender: TObject);                                // Rutina que ocurre al pulsar el botón de anulación de test de velocidad
     procedure ComboBoxEx1Change(Sender: TObject);
