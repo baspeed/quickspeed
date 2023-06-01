@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 473
+  Left = 470
   Height = 666
-  Top = 227
+  Top = 228
   Width = 889
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -381,8 +381,8 @@ object Form1: TForm1
         Top = 352
         Width = 406
         Caption = ' Datos del test de velocidad '
-        ClientHeight = 106
-        ClientWidth = 402
+        ClientHeight = 110
+        ClientWidth = 404
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Name = 'Segoe UI'
@@ -438,8 +438,8 @@ object Form1: TForm1
         Top = 24
         Width = 430
         Caption = ' Gráfica de velocidad (Mbps)'
-        ClientHeight = 132
-        ClientWidth = 426
+        ClientHeight = 137
+        ClientWidth = 428
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Pitch = fpVariable
@@ -450,7 +450,7 @@ object Form1: TForm1
         TabOrder = 1
         object Label2: TLabel
           Left = 8
-          Height = 17
+          Height = 16
           Top = 8
           Width = 28
           Caption = '1000'
@@ -463,7 +463,7 @@ object Form1: TForm1
         end
         object Label3: TLabel
           Left = 8
-          Height = 17
+          Height = 16
           Top = 32
           Width = 21
           Caption = '750'
@@ -476,7 +476,7 @@ object Form1: TForm1
         end
         object Label4: TLabel
           Left = 8
-          Height = 17
+          Height = 16
           Top = 56
           Width = 21
           Caption = '500'
@@ -489,7 +489,7 @@ object Form1: TForm1
         end
         object Label5: TLabel
           Left = 8
-          Height = 17
+          Height = 16
           Top = 80
           Width = 21
           Caption = '250'
@@ -502,7 +502,7 @@ object Form1: TForm1
         end
         object Label6: TLabel
           Left = 8
-          Height = 17
+          Height = 16
           Top = 103
           Width = 7
           Caption = '0'
@@ -541,8 +541,8 @@ object Form1: TForm1
         Top = 184
         Width = 430
         Caption = ' Datos de hilos de descarga / subida '
-        ClientHeight = 202
-        ClientWidth = 426
+        ClientHeight = 207
+        ClientWidth = 428
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Pitch = fpVariable
@@ -1163,6 +1163,28 @@ object Form1: TForm1
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object HtmlViewer2: THtmlViewer
+        Left = 448
+        Height = 86
+        Top = 16
+        Width = 428
+        BorderStyle = htNone
+        DefBackground = clWhite
+        DefFontName = 'Segoe UI'
+        DefFontSize = 9
+        HistoryMaxCount = 0
+        HtOptions = [htPrintTableBackground, htPrintMonochromeBlack, htNoFocusRect]
+        NoSelect = True
+        PrintMarginBottom = 2
+        PrintMarginLeft = 2
+        PrintMarginRight = 2
+        PrintMarginTop = 2
+        PrintScale = 1
+        ScrollBars = ssNone
+        Text = '<b>Test de ping</b> de <b><a href="https://baspeed.synology.me">QuickSpeed</a></b>. Creado usando c'#243'digo de la librer'#237'a <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'
+        OnHotSpotClick = HtmlViewer2HotSpotClick
+        TabOrder = 3
+      end
     end
     object JvStandardPage3: TJvStandardPage
       Left = 0
@@ -1520,6 +1542,28 @@ object Form1: TForm1
         Caption = 'Máximo de saltos'
         Font.Style = [fsBold]
         ParentFont = False
+      end
+      object HtmlViewer3: THtmlViewer
+        Left = 448
+        Height = 86
+        Top = 16
+        Width = 428
+        BorderStyle = htNone
+        DefBackground = clWhite
+        DefFontName = 'Segoe UI'
+        DefFontSize = 9
+        HistoryMaxCount = 0
+        HtOptions = [htPrintTableBackground, htPrintMonochromeBlack, htNoFocusRect]
+        NoSelect = True
+        PrintMarginBottom = 2
+        PrintMarginLeft = 2
+        PrintMarginRight = 2
+        PrintMarginTop = 2
+        PrintScale = 1
+        ScrollBars = ssNone
+        Text = '<b>Test de ping</b> de <b><a href="https://baspeed.synology.me">QuickSpeed</a></b>. Creado usando c'#243'digo de la librer'#237'a <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'
+        OnHotSpotClick = HtmlViewer3HotSpotClick
+        TabOrder = 3
       end
     end
   end

@@ -20,7 +20,7 @@ uses
   LCLIntF, ComCtrls, Grids, Spin, Unit2, HtmlView, HtmlGlobals,
   JvPageList, JvTabBar, TplLogGraphUnit, TplComboBoxUnit, indLCDDisplay,
   cySimpleGauge, IdHTTP, IdIOHandler, IdIOHandlerStack, IdSSLOpenSSL,
-  IdComponent, IdSSLOpenSSLHeaders, PingSend;
+  IdComponent, IdSSLOpenSSLHeaders, PingSend, LazUTF8;
 
 type
 
@@ -41,6 +41,8 @@ type
     GroupBox2: TGroupBox;                              // Gráfica de velocidad instantánea
     GroupBox3: TGroupBox;                              // Datos de cada hilo de descarga
     HtmlViewer1: THtmlViewer;                          // Caja de texto HTML
+    HtmlViewer2: THtmlViewer;
+    HtmlViewer3: THtmlViewer;
     Image1: TImage;                                    // Imagen / icono de la información del hilo 1 de descarga
     Image2: TImage;                                    // Imagen / icono de la información del hilo 2 de descarga
     Image3: TImage;                                    // Imagen / icono de la información del hilo 3 de descarga
@@ -88,6 +90,10 @@ type
     procedure FormCreate(Sender: TObject);             // Rutina que se ejecuta al crear la ventana (antes de visualizarla)
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);  // Rutina que permite examinar las pulsaciones del teclado dentro de la aplicación
     procedure HtmlViewer1HotSpotClick(Sender: TObject; const SRC: ThtString;    // Rutina que abre un enlace dentro del texto HTML de descripción de la aplicación
+      var Handled: Boolean);
+    procedure HtmlViewer2HotSpotClick(Sender: TObject; const SRC: ThtString;
+      var Handled: Boolean);
+    procedure HtmlViewer3HotSpotClick(Sender: TObject; const SRC: ThtString;
       var Handled: Boolean);
     procedure IniciaPing(Sender: TObject);
     procedure IniciaTracert(Sender: TObject);
@@ -523,12 +529,17 @@ begin
      IdOpenSSLSetLibPath('.\');                              // Donde tiene que encontrar el ejecutable las librerías para acceder al protocolo HTTPS
      Form1.Caption:='QuickSpeed Windows Edition';            // Cambia el título de la ventana para que vea que la edición es la de Windows
      {$ENDIF}
-     HTMLViewer1.Text:=UnicodeString('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+')</b><br>'+
+     HTMLViewer1.Text:=SysToUTF8('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+')</b><br>'+
                        'Creado por José Ignacio Legido (usuario <b><a href="https://bandaancha.eu/usuarios/djnacho-60320">djnacho</a></b> de <b><a href="https://bandaancha.eu">bandaancha.eu</a></b>).<br><br>'+
                        'Este test de velocidad ha sido creado usando <b><a href="https://www.pilotlogic.com">CodeTyphon</a></b>, un IDE de código abierto para <b><a href="https://www.freepascal.org">freepascal</a></b>.<br>'+
                        'Este programa tiene licencia <b><a href="https://www.gnu.org/licenses/gpl-3.0-standalone">GPL v3</a></b>.<br>'+
                        'Dedicado a todos los usuarios de bandaancha.eu y a toda la comunidad internauta en general. Este software no sería posible sin su apoyo y ayuda.<br><br>'+
                        'Código fuente de este software disponible en <b><a href="https://github.com/baspeed/quickspeed">GitHub.com</a></b>'); // Presenta texto HTML de descripción de la aplicación en pantalla
+     HTMLViewer2.Text:=SysToUTF8('<b>Test de ping de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>.<br>Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'+
+                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa.');
+     HTMLViewer3.Text:=SysToUTF8('<b>Test de tracert de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>.<br>Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'+
+                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa.');
+
      for contador:=1 to 32 do
          begin
               StringGrid1.Cells[0,contador]:=inttostr(contador);   // Inicializa la columna del número de ping (test de ping)
@@ -616,6 +627,18 @@ end;
 // Rutina que permite abrir un enlace que está dentro del texto HTML de la descripción de la aplicación
 
 procedure TForm1.HtmlViewer1HotSpotClick(Sender: TObject; const SRC: ThtString;
+  var Handled: Boolean);
+begin
+     OpenURl(AnsiString(SRC));                   // Transforma la variable SRC en AnsiString y abre el enlace en el navegador
+end;
+
+procedure TForm1.HtmlViewer2HotSpotClick(Sender: TObject; const SRC: ThtString;
+  var Handled: Boolean);
+begin
+     OpenURl(AnsiString(SRC));                   // Transforma la variable SRC en AnsiString y abre el enlace en el navegador
+end;
+
+procedure TForm1.HtmlViewer3HotSpotClick(Sender: TObject; const SRC: ThtString;
   var Handled: Boolean);
 begin
      OpenURl(AnsiString(SRC));                   // Transforma la variable SRC en AnsiString y abre el enlace en el navegador
