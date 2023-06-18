@@ -17,10 +17,10 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls,
   dtthemedgauge, BCButton, BGRACustomDrawn, RxVersInfo, LCLType,
-  LCLIntF, ComCtrls, Grids, Spin, Unit2, HtmlView, HtmlGlobals,
+  LCLIntF, ComCtrls, Grids, Spin, Buttons, Unit2, HtmlView, HtmlGlobals,
   JvPageList, JvTabBar, TplLogGraphUnit, TplComboBoxUnit, indLCDDisplay,
   cySimpleGauge, IdHTTP, IdIOHandler, IdIOHandlerStack, IdSSLOpenSSL,
-  IdComponent, IdSSLOpenSSLHeaders, PingSend, LazUTF8;
+  IdComponent, IdSSLOpenSSLHeaders, PingSend, LazUTF8, ClipBrd;
 
 type
 
@@ -35,6 +35,10 @@ type
     Bevel1: TBevel;                                    // Linea divisoria entre pantalla de test y panel informativo
     Bevel2: TBevel;
     Bevel3: TBevel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
     cySimpleGauge1: TcySimpleGauge;                    // Barra de progreso del test de velocidad
     DTThemedGauge1: TDTThemedGauge;                    // Velocímetro
     GroupBox1: TGroupBox;                              // Datos generales de velocidad del test de velocidad
@@ -86,6 +90,10 @@ type
     Timer1: TTimer;                                    // Temporizador para mostrar los datos del test de velocidad en un intervalo determinado
     procedure BCButton1Click(Sender: TObject);         // Llama a rutina que permite seleccionar un test de velocidad de un mapa
     procedure BCButton2Click(Sender: TObject);         // Llama a la rutina que inicia el test de velocidad
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);           // Se llama a esta rutina cuando se activa la ventana en la primera ejecución del programa
     procedure FormCreate(Sender: TObject);             // Rutina que se ejecuta al crear la ventana (antes de visualizarla)
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);  // Rutina que permite examinar las pulsaciones del teclado dentro de la aplicación
@@ -154,7 +162,7 @@ type
   end;
 
   const
-       TAMBUFFER:integer=256*1024;                 // Tamaño del buffer de recepción de datos = 512 KBytes
+       TAMBUFFER:integer=512*1024;                 // Tamaño del buffer de recepción de datos = 512 KBytes
        NUMHILOS:integer=6;                         // Número de hilos de descarga simultaneos para test de velocidad;
 
 
@@ -529,7 +537,7 @@ begin
      IdOpenSSLSetLibPath('.\');                              // Donde tiene que encontrar el ejecutable las librerías para acceder al protocolo HTTPS
      Form1.Caption:='QuickSpeed Windows Edition';            // Cambia el título de la ventana para que vea que la edición es la de Windows
      {$ENDIF}
-     HTMLViewer1.Text:=SysToUTF8('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+')</b><br>'+
+     HTMLViewer1.Text:=SysToUTF8('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+') versión PRE-BETA</b><br>'+
                        'Creado por José Ignacio Legido (usuario <b><a href="https://bandaancha.eu/usuarios/djnacho-60320">djnacho</a></b> de <b><a href="https://bandaancha.eu">bandaancha.eu</a></b>).<br><br>'+
                        'Este test de velocidad ha sido creado usando <b><a href="https://www.pilotlogic.com">CodeTyphon</a></b>, un IDE de código abierto para <b><a href="https://www.freepascal.org">freepascal</a></b>.<br>'+
                        'Este programa tiene licencia <b><a href="https://www.gnu.org/licenses/gpl-3.0-standalone">GPL v3</a></b>.<br>'+
@@ -597,6 +605,92 @@ begin
         end
      else
          cancelartestvelocidad:=True;                                       // Si se pulsa el botón con el test iniciado se activa esta variable para detener el test
+end;
+
+procedure TForm1.BitBtn1Click(Sender: TObject);
+
+var
+   contador: Integer;
+   Texto: String;
+
+begin
+     Texto:='Ping generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13;
+     contador:=0;
+     if (StringGrid1.Cells[1,1]<>'') then
+        begin
+             Clipboard.Clear;
+             repeat
+                   Texto:=Texto+StringGrid1.Cells[0,contador]+#9+StringGrid1.Cells[1,contador]+#9+#9+StringGrid1.Cells[2,contador]+#9+StringGrid1.Cells[3,contador]+#9+StringGrid1.Cells[4,contador]+#10;
+                   ClipBoard.AsText:=Texto;
+                   inc(contador);
+             until (contador>SpinEdit1.Value);
+             MessageDlg('Ping copiado','Ping copiado al portapapeles. Puede usarlo en cualquier aplicación de texto usando la opción Pegar de la aplicación.',mtInformation,[mbok],0);
+        end
+     else
+         MessageDlg('Ping no disponible','Aún no se ha realizado ningún ping con la aplicación. Haga un ping en la aplicación para poder usar esta función.',MtError,[mbok],0);
+end;
+
+procedure TForm1.BitBtn2Click(Sender: TObject);
+
+var
+   fichero: string;
+begin
+     DateTimeToString(fichero,'dd-mm-yyyy-hh-nn-ss',Now,[]);
+     fichero:='capturaping'+fichero+'.png';
+     {$IFDEF UNIX}                                                             // Si estamos en Linux
+     CreateDir('./screenshotping');                                                // Crea carpeta screenshot
+     Form1.GetFormImage.SaveToFile('./screenshotping/'+fichero);                // Guarda captura de la ventana en la carpeta screenshot
+     MessageDlg('Captura de ventana ping','Captura de ventana de ping guardada en carpeta screenshotping.',mtinformation,[mbok],0);  // Muestra mensaje de información
+     {$ENDIF}
+     {$IFDEF WINDOWS}                                                          // Si estamos en Windows
+     CreateDir('.\screenshotping');                                                // Crea carpeta screenshot
+     Form1.GetFormImage.SaveToFile('.\screenshotping\'+fichero);                // Guarda captura de la ventana en la carpeta screenshot
+     MessageDlg('Captura de ventana ping','Captura de ventana de ping guardada en carpeta screenshotping.',mtinformation,[mbok],0);  // Muestra mensaje de información
+     {$ENDIF}
+end;
+
+procedure TForm1.BitBtn3Click(Sender: TObject);
+
+var
+   contador: Integer;
+   Texto: String;
+
+begin
+     Texto:='Tracert generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13;
+     contador:=0;
+     if (StringGrid2.Cells[1,1]<>'') then
+        begin
+             Clipboard.Clear;
+             repeat
+                   if (StringGrid2.Cells[1,contador]<>'') then
+                      Texto:=Texto+StringGrid2.Cells[0,contador]+#9+StringGrid2.Cells[1,contador]+#9+#9+StringGrid2.Cells[2,contador]+#9+StringGrid2.Cells[3,contador]+#9+StringGrid2.Cells[4,contador]+#9+StringGrid2.Cells[5,contador]+#9+StringGrid2.Cells[6,contador]+#10
+                   else
+                       Texto:=Texto+StringGrid2.Cells[0,contador]+#9+#9+#9+#9+StringGrid2.Cells[2,contador]+#9+StringGrid2.Cells[3,contador]+#9+StringGrid2.Cells[4,contador]+#9+StringGrid2.Cells[5,contador]+#9+StringGrid2.Cells[6,contador]+#10;
+                   ClipBoard.AsText:=Texto;
+                   inc(contador);
+             until (StringGrid2.Cells[2,contador]='') or (contador>SpinEdit2.Value);
+             MessageDlg('Tracert copiado','Tracert copiado al portapapeles. Puede usarlo en cualquier aplicación de texto usando la opción Pegar de la aplicación.',mtInformation,[mbok],0);
+        end
+     else
+         MessageDlg('Tracert no disponible','Aún no se ha realizado ningún tracert con la aplicación. Haga un tracert en la aplicación para poder usar esta función.',MtError,[mbok],0);
+end;
+
+procedure TForm1.BitBtn4Click(Sender: TObject);
+var
+   fichero: string;
+begin
+     DateTimeToString(fichero,'dd-mm-yyyy-hh-nn-ss',Now,[]);
+     fichero:='capturatracert'+fichero+'.png';
+     {$IFDEF UNIX}                                                             // Si estamos en Linux
+     CreateDir('./screenshottracert');                                                // Crea carpeta screenshot
+     Form1.GetFormImage.SaveToFile('./screenshottracert/'+fichero);                // Guarda captura de la ventana en la carpeta screenshot
+     MessageDlg('Captura de ventana ping','Captura de ventana de ping guardada en carpeta screenshottracert.',mtinformation,[mbok],0);  // Muestra mensaje de información
+     {$ENDIF}
+     {$IFDEF WINDOWS}                                                          // Si estamos en Windows
+     CreateDir('.\screenshottracert');                                                // Crea carpeta screenshot
+     Form1.GetFormImage.SaveToFile('.\screenshottracert\'+fichero);                // Guarda captura de la ventana en la carpeta screenshot
+     MessageDlg('Captura de ventana ping','Captura de ventana de ping guardada en carpeta screenshottracert.',mtinformation,[mbok],0);  // Muestra mensaje de información
+     {$ENDIF}
 end;
 
 procedure TForm1.FormActivate(Sender: TObject);
