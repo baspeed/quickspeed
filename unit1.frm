@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 472
+  Left = 473
   Height = 666
-  Top = 228
+  Top = 227
   Width = 889
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -44,7 +44,7 @@ object Form1: TForm1
     Height = 618
     Top = 48
     Width = 889
-    ActivePage = JvStandardPage2
+    ActivePage = JvStandardPage1
     PropagateEnable = False
     Align = alClient
     object JvStandardPage1: TJvStandardPage
@@ -381,8 +381,8 @@ object Form1: TForm1
         Top = 352
         Width = 406
         Caption = ' Datos del test de velocidad '
-        ClientHeight = 110
-        ClientWidth = 404
+        ClientHeight = 106
+        ClientWidth = 402
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Name = 'Segoe UI'
@@ -438,8 +438,8 @@ object Form1: TForm1
         Top = 24
         Width = 430
         Caption = ' Gráfica de velocidad (Mbps)'
-        ClientHeight = 137
-        ClientWidth = 428
+        ClientHeight = 132
+        ClientWidth = 426
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Pitch = fpVariable
@@ -450,7 +450,7 @@ object Form1: TForm1
         TabOrder = 1
         object Label2: TLabel
           Left = 8
-          Height = 16
+          Height = 17
           Top = 8
           Width = 28
           Caption = '1000'
@@ -463,7 +463,7 @@ object Form1: TForm1
         end
         object Label3: TLabel
           Left = 8
-          Height = 16
+          Height = 17
           Top = 32
           Width = 21
           Caption = '750'
@@ -476,7 +476,7 @@ object Form1: TForm1
         end
         object Label4: TLabel
           Left = 8
-          Height = 16
+          Height = 17
           Top = 56
           Width = 21
           Caption = '500'
@@ -489,7 +489,7 @@ object Form1: TForm1
         end
         object Label5: TLabel
           Left = 8
-          Height = 16
+          Height = 17
           Top = 80
           Width = 21
           Caption = '250'
@@ -502,7 +502,7 @@ object Form1: TForm1
         end
         object Label6: TLabel
           Left = 8
-          Height = 16
+          Height = 17
           Top = 103
           Width = 7
           Caption = '0'
@@ -541,8 +541,8 @@ object Form1: TForm1
         Top = 184
         Width = 430
         Caption = ' Datos de hilos de descarga / subida '
-        ClientHeight = 207
-        ClientWidth = 428
+        ClientHeight = 202
+        ClientWidth = 426
         Font.CharSet = ANSI_CHARSET
         Font.Height = -13
         Font.Pitch = fpVariable
@@ -840,18 +840,18 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label15: TLabel
-        Left = 13
-        Height = 17
-        Top = 48
-        Width = 147
+        Left = 8
+        Height = 15
+        Top = 32
+        Width = 115
         Caption = 'Nombre del servidor'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object BCButton3: TBCButton
         Left = 281
-        Height = 64
-        Top = 106
+        Height = 82
+        Top = 96
         Width = 136
         StateClicked.Background.Gradient1.StartColor = 8404992
         StateClicked.Background.Gradient1.EndColor = 4194304
@@ -1075,10 +1075,10 @@ object Form1: TForm1
         MemoryUsage = bmuHigh
       end
       object plComboBox1: TplComboBox
-        Left = 13
-        Height = 37
-        Top = 66
-        Width = 208
+        Left = 8
+        Height = 38
+        Top = 49
+        Width = 239
         Color = clDefault
         DropDownCount = 4
         Font.Height = -17
@@ -1144,7 +1144,7 @@ object Form1: TForm1
       end
       object SpinEdit1: TSpinEdit
         Left = 281
-        Height = 34
+        Height = 23
         Top = 64
         Width = 136
         Font.Style = [fsBold]
@@ -1156,16 +1156,16 @@ object Form1: TForm1
       end
       object Label16: TLabel
         Left = 281
-        Height = 17
+        Height = 15
         Top = 48
-        Width = 121
+        Width = 95
         Caption = 'Número de pings'
         Font.Style = [fsBold]
         ParentFont = False
       end
       object HtmlViewer2: THtmlViewer
         Left = 448
-        Height = 86
+        Height = 162
         Top = 16
         Width = 428
         BorderStyle = htNone
@@ -1186,11 +1186,13 @@ object Form1: TForm1
         TabOrder = 3
       end
       object BitBtn1: TBitBtn
-        Left = 16
-        Height = 58
+        Left = 8
+        Height = 82
         Hint = 'Copiar datos del ping al portapapeles'
-        Top = 112
-        Width = 104
+        Top = 96
+        Width = 115
+        Caption = 'Copiar Portapeles'
+        Font.Style = [fsBold]
         Glyph.Data = {
           36240000424D3624000000000000360000002800000030000000300000000100
           2000000000000024000064000000640000000000000000000000000000000000
@@ -1483,17 +1485,21 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000
         }
+        Layout = blGlyphTop
         OnClick = BitBtn1Click
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 4
       end
       object BitBtn2: TBitBtn
-        Left = 119
-        Height = 58
+        Left = 128
+        Height = 82
         Hint = 'Captura completa de la ventana de la aplicación'
-        Top = 112
-        Width = 102
+        Top = 96
+        Width = 119
+        Caption = 'Captura Ventana'
+        Font.Style = [fsBold]
         Glyph.Data = {
           36240000424D3624000000000000360000002800000030000000300000000100
           2000000000000024000064000000640000000000000000000000000000000000
@@ -1786,7 +1792,9 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000
         }
+        Layout = blGlyphTop
         OnClick = BitBtn2Click
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 5
@@ -1818,9 +1826,9 @@ object Form1: TForm1
         ParentFont = False
       end
       object Label18: TLabel
-        Left = 13
+        Left = 8
         Height = 15
-        Top = 48
+        Top = 32
         Width = 115
         Caption = 'Nombre del servidor'
         Font.Style = [fsBold]
@@ -1828,8 +1836,8 @@ object Form1: TForm1
       end
       object BCButton4: TBCButton
         Left = 280
-        Height = 64
-        Top = 106
+        Height = 80
+        Top = 96
         Width = 136
         StateClicked.Background.Gradient1.StartColor = 8404992
         StateClicked.Background.Gradient1.EndColor = 4194304
@@ -2050,10 +2058,10 @@ object Form1: TForm1
         MemoryUsage = bmuHigh
       end
       object plComboBox2: TplComboBox
-        Left = 13
+        Left = 8
         Height = 38
-        Top = 66
-        Width = 208
+        Top = 51
+        Width = 239
         Color = clDefault
         DropDownCount = 4
         Font.Height = -17
@@ -2151,7 +2159,7 @@ object Form1: TForm1
       end
       object HtmlViewer3: THtmlViewer
         Left = 448
-        Height = 86
+        Height = 158
         Top = 16
         Width = 428
         BorderStyle = htNone
@@ -2172,11 +2180,13 @@ object Form1: TForm1
         TabOrder = 3
       end
       object BitBtn3: TBitBtn
-        Left = 16
-        Height = 58
+        Left = 8
+        Height = 80
         Hint = 'Copiar datos del tracert al portapapeles'
-        Top = 112
-        Width = 104
+        Top = 96
+        Width = 120
+        Caption = 'Copiar Portapeles'
+        Font.Style = [fsBold]
         Glyph.Data = {
           36240000424D3624000000000000360000002800000030000000300000000100
           2000000000000024000064000000640000000000000000000000000000000000
@@ -2469,17 +2479,21 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000
         }
+        Layout = blGlyphTop
         OnClick = BitBtn3Click
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 4
       end
       object BitBtn4: TBitBtn
-        Left = 119
-        Height = 58
+        Left = 128
+        Height = 80
         Hint = 'Captura completa de la ventana de la aplicación'
-        Top = 112
-        Width = 102
+        Top = 96
+        Width = 119
+        Caption = 'Captura Ventana'
+        Font.Style = [fsBold]
         Glyph.Data = {
           36240000424D3624000000000000360000002800000030000000300000000100
           2000000000000024000064000000640000000000000000000000000000000000
@@ -2772,7 +2786,9 @@ object Form1: TForm1
           0000000000000000000000000000000000000000000000000000000000000000
           0000000000000000000000000000000000000000000000000000
         }
+        Layout = blGlyphTop
         OnClick = BitBtn4Click
+        ParentFont = False
         ParentShowHint = False
         ShowHint = True
         TabOrder = 5

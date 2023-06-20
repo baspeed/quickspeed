@@ -107,15 +107,17 @@ type
     procedure IniciaTracert(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);            // Rutina que muestra los datos del test de velocidad cuando ha pasado el intervalo especificado
 
-    procedure MuestraDatosPing;
-    procedure MuestraErrorPing;
-    procedure MuestraDatosTracert1;
-    procedure MuestraDatosTracert2;
-    procedure MuestradatosTracert3;
-    procedure ErrorTracert1;
-    procedure ErrorTracert2;
-    procedure ErrorTracert3;
-    procedure ErrorWebPais;
+    procedure MuestraDatosPing;                        // Muestra los datos de cada ping
+    procedure MuestraErrorPing;                        // Muestra mensaje de error en el ping si el servidor no responde
+    procedure MuestraDatosTracert1;                    // Muestra el primer ping del tracert
+    procedure MuestraDatosTracert2;                    // Muestra el segundo ping del tracert
+    procedure MuestradatosTracert3;                    // Muestra el tercer ping del tracert
+    procedure ErrorTracert1;                           // Muestra NR si no hay eco en el primer ping del tracert
+    procedure ErrorTracert2;                           // Muestra NR si no hay eco en el segundo ping del tracert
+    procedure ErrorTracert3;                           // Muestra NR si no hay eco en el tercer ping del tracert
+    procedure ErrorWebPais;                            // Muestra -- si no hay información del pais de origen de la IP
+    procedure ErrorServidorTracert;                    // Muestra mensaje de error si el servidor no existe al hacer un ping
+    procedure ErrorServidorPing;                       // Muestra un mensaje de error si el servidor no existe al hacer un tracert
 
     private
     public
@@ -187,6 +189,18 @@ var
 implementation
 
 {$R *.frm}
+
+procedure TForm1.ErrorServidorTracert;
+
+begin
+     MessageDlg('Error de Ping','Imposible acceder al servidor indicado para poder realizar un ping. El servidor puede estar innacesible desde internet, no responder al protocolo ICMP, o no existir como tal en la red.',mtError,[mbOk],0);
+end;
+
+procedure TForm1.ErrorServidorPing;
+
+begin
+     MessageDlg('Error de Tracert','Imposible acceder al servidor indicado para poder realizar un tracert. El servidor puede estar innacesible desde internet, no responder al protocolo ICMP, o no existir como tal en la red.',mtError,[mbOk],0);
+end;
 
 procedure TForm1.ErrorWebPais;
 
@@ -385,11 +399,13 @@ begin
                    inc(contadorping,1);
                    Ping.TTL:=contadorping;
              until (Ping.ReplyFrom=final) or (contadorping>=Form1.SpinEdit2.Value) or (errorpais);  //Realiza el test hasta que se llegue a la IP destino o se supere el límite de saltos puesto por el usuario o se produzca un error en los datos de ip-api.com
-             Ping.Free;                   // Libera el objeto para hacer los pings
-             web.Free;                    // Libera el objeto para acceder a ip-api.com
-             io.Free;                     // Libera el manejador de conexiones del objeto web
-             cadenainfo.Free;             // Libera la cadena de caracteres
-        end;
+        end
+     else
+         Synchronize(@Form1.ErrorServidorTracert);                                 // Si no existe el servidor, muestra mensaje de error al usuario
+     Ping.Free;                   // Libera el objeto para hacer los pings
+     web.Free;                    // Libera el objeto para acceder a ip-api.com
+     io.Free;                     // Libera el manejador de conexiones del objeto web
+     cadenainfo.Free;             // Libera la cadena de caracteres
 end;
 
 procedure TEco.Execute;
@@ -401,36 +417,41 @@ begin
      io.ReadTimeout:=2000;                                   // Tiempo de espera antes de error del manejador de conexiones (lectura)
      io.ConnectTimeout:=2000;                                // Tiempo de espera antes de error del manejador de conexiones (conexión)
      cadenainfo:=TStringList.Create;                         // Crea la lista de cadenas de caracteres que va a contener toda la info proporcionada por ip-pi.com
-     for contadorping:=1 to Form1.SpinEdit1.Value do       // Lanza tantos pings como indique el valor del contador de pings
-         begin
-              if Ping.Ping(Form1.plComboBox1.Text) then    // Si el ping es correcto
+     if (ping.Ping(Form1.plComboBox1.Text)) then
+        begin
+             for contadorping:=1 to Form1.SpinEdit1.Value do       // Lanza tantos pings como indique el valor del contador de pings
                  begin
-                      tiempoping:=Ping.PingTime;           // Recoge el tiempo del ping
-                      servidorping:=Ping.ReplyFrom;        // IP del servidor destino
-                      try
-                         respuestainfoip:=web.Get('http://ip-api.com/line/'+Ping.ReplyFrom+'?lang=en');    // Recoge la info de la IP (en inglés)
-                         cadenainfo.AddText(respuestainfoip);                                              // Saca todas las cadenas de texto de la info
-                         if (cadenainfo[0]='success') then                                                 // Si la IP es correcta
-                            begin
-                                 paisipshort:=cadenainfo[2];                                               // Rellena el valor de nombre de pais corto
-                                 paisiplong:=cadenainfo[1];                                                // Rellena el valor de nombre de pais largo
-                            end
-                         else
-                             begin
-                                  paisipshort:='--';                                                       // Rellena el valor de nombre de pais corto con --
-                                  paisiplong:=cadenainfo[1];                                               // Rellena el valor de nombre de pais largo con el mensaje de error
-                             end;
-                         Synchronize(@Form1.MuestraDatosPing);                                             // Muestra los datos por pantalla
-                      except
-                            begin
-                                 Synchronize(@Form1.ErrorWebPais);                                         // Muestra datos de error de IP
-                                 break;
-                            end;
-                      end;
-                 end
-              else                                                                         // Si hay algún fallo al realizar el ping
-                  Synchronize(@Form1.MuestraErrorPing);
-         end;
+                      if Ping.Ping(Form1.plComboBox1.Text) then    // Si el ping es correcto
+                         begin
+                              tiempoping:=Ping.PingTime;           // Recoge el tiempo del ping
+                              servidorping:=Ping.ReplyFrom;        // IP del servidor destino
+                              try
+                                 respuestainfoip:=web.Get('http://ip-api.com/line/'+Ping.ReplyFrom+'?lang=en');    // Recoge la info de la IP (en inglés)
+                                 cadenainfo.AddText(respuestainfoip);                                              // Saca todas las cadenas de texto de la info
+                                 if (cadenainfo[0]='success') then                                                 // Si la IP es correcta
+                                    begin
+                                         paisipshort:=cadenainfo[2];                                               // Rellena el valor de nombre de pais corto
+                                         paisiplong:=cadenainfo[1];                                                // Rellena el valor de nombre de pais largo
+                                    end
+                                 else
+                                     begin
+                                          paisipshort:='--';                                                       // Rellena el valor de nombre de pais corto con --
+                                          paisiplong:=cadenainfo[1];                                               // Rellena el valor de nombre de pais largo con el mensaje de error
+                                     end;
+                                 Synchronize(@Form1.MuestraDatosPing);                                             // Muestra los datos por pantalla
+                              except
+                                    begin
+                                         Synchronize(@Form1.ErrorWebPais);                                         // Muestra datos de error de IP
+                                         break;
+                                    end;
+                              end;
+                         end
+                      else                                                                         // Si hay algún fallo al realizar el ping
+                          Synchronize(@Form1.MuestraErrorPing);
+                 end;
+        end
+     else
+         Synchronize(@Form1.ErrorServidorPing);                                            // Si no existe el servidor, muestra mensaje de error al usuario
      Ping.Free;                                                                            // Libera el objeto para hacer pings
      web.Free;                                                                             // Librera el objeto para acceder a la web
      io.Free;                                                                              // Libera el manejador de conexiones del objeto web
@@ -537,16 +558,20 @@ begin
      IdOpenSSLSetLibPath('.\');                              // Donde tiene que encontrar el ejecutable las librerías para acceder al protocolo HTTPS
      Form1.Caption:='QuickSpeed Windows Edition';            // Cambia el título de la ventana para que vea que la edición es la de Windows
      {$ENDIF}
-     HTMLViewer1.Text:=SysToUTF8('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+') versión PRE-BETA</b><br>'+
+     HTMLViewer1.Text:=SysToUTF8('<b>Test de velocidad <a href="http://baspeed.bandaancha.eu">QuickSpeed</a> v'+RXVersionInfo1.FileVersion+' ('+FormatDateTime('DD-MM-YYYY',FileDatetoDateTime(Age))+') versión FINAL</b><br>'+
                        'Creado por José Ignacio Legido (usuario <b><a href="https://bandaancha.eu/usuarios/djnacho-60320">djnacho</a></b> de <b><a href="https://bandaancha.eu">bandaancha.eu</a></b>).<br><br>'+
                        'Este test de velocidad ha sido creado usando <b><a href="https://www.pilotlogic.com">CodeTyphon</a></b>, un IDE de código abierto para <b><a href="https://www.freepascal.org">freepascal</a></b>.<br>'+
                        'Este programa tiene licencia <b><a href="https://www.gnu.org/licenses/gpl-3.0-standalone">GPL v3</a></b>.<br>'+
                        'Dedicado a todos los usuarios de bandaancha.eu y a toda la comunidad internauta en general. Este software no sería posible sin su apoyo y ayuda.<br><br>'+
                        'Código fuente de este software disponible en <b><a href="https://github.com/baspeed/quickspeed">GitHub.com</a></b>'); // Presenta texto HTML de descripción de la aplicación en pantalla
-     HTMLViewer2.Text:=SysToUTF8('<b>Test de ping de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>.<br>Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'+
-                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa.');
-     HTMLViewer3.Text:=SysToUTF8('<b>Test de tracert de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>.<br>Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>.<br>'+
-                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa.');
+     HTMLViewer2.Text:=SysToUTF8('<b>Test de ping de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>. Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>. '+
+                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa. '+
+                                               'Pulse el botón Pegar al Cortapapeles para copiar todo el resultado del test de ping al cortapapeles (para usar en aplicaciones web / de texto). Pulse el botón Captura Ventana para realizar '+
+                                               'una captura gráfica de la ventana de la aplicación y guardarla en la carpeta screenshotping que cuelga de la carpeta donde esté el ejecutable de QuickSpeed.');
+     HTMLViewer3.Text:=SysToUTF8('<b>Test de tracert de <a href="https://baspeed.bandaancha.eu">QuickSpeed</a></b>. Creado usando código de la librería <b><a href="https://wiki.lazarus.freepascal.org/Synapse"> Synapse</a></b>. '+
+                                               'Para usar esta funcionalidad en Linux se debe ejecutar el programa con el comando <b>sudo ./QuickSpeed</b> en una terminal abierta desde la carpeta donde esté el ejecutable del programa. '+
+                                               'Pulse el botón Pegar al Cortapapeles para copiar todo el resultado del test de tracert al cortapapeles (para usar en aplicaciones web / de texto). Pulse el botón Captura Ventana para realizar '+
+                                               'una captura gráfica de la ventana de la aplicación y guardarla en la carpeta screenshottracert que cuelga de la carpeta donde esté el ejecutable de QuickSpeed.');
 
      for contador:=1 to 32 do
          begin
@@ -589,9 +614,9 @@ begin
                            1 : hilosdescarga[contadorhilo].enlace:='https://testvelocidad.eu/speed-test/download.bin';
                            2 : hilosdescarga[contadorhilo].enlace:='http://ipv4.download.thinkbroadband.com/100MB.zip';
                            3 : hilosdescarga[contadorhilo].enlace:='https://rbx.proof.ovh.net/files/100Mb.dat';
-                           4 : hilosdescarga[contadorhilo].enlace:='http://es.download.nvidia.com/Windows/452.06/452.06-desktop-win10-64bit-international-dch-whql.exe';
+                           4 : hilosdescarga[contadorhilo].enlace:='https://es.download.nvidia.com/Windows/536.23/536.23-desktop-win10-win11-64bit-international-dch-whql.exe';
                            5 : hilosdescarga[contadorhilo].enlace:='http://speedtest.london.linode.com/100MB-london.bin';
-                           6 : hilosdescarga[contadorhilo].enlace:='https://ftp.rediris.es/debian-cd/11.7.0-live/amd64/iso-hybrid/debian-live-11.7.0-amd64-standard.iso';
+                           6 : hilosdescarga[contadorhilo].enlace:='https://ftp.rediris.es/debian-cd/12.0.0-live/amd64/iso-hybrid/debian-live-12.0.0-amd64-standard.iso';
                            7 : hilosdescarga[contadorhilo].enlace:='https://speed.hetzner.de/100MB.bin';
                            8 : hilosdescarga[contadorhilo].enlace:='https://testvelocidadvld.orange.es:8080/speedtest/random4000x4000.jpg';
                            9 : hilosdescarga[contadorhilo].enlace:='https://lon.speedtest.clouvider.net/1g.bin';
@@ -614,19 +639,25 @@ var
    Texto: String;
 
 begin
-     Texto:='Ping generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13;
-     contador:=0;
-     if (StringGrid1.Cells[1,1]<>'') then
+     // Primer texto que aparece en el portapapeles
+     Texto:='Ping generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13+'Servidor destino: '+plComboBox1.Text+#13;
+     contador:=0; // Contador de lineas a 0
+     if (StringGrid1.Cells[1,1]<>'') then  // Si el valor de la IP no es una cadena vacia
         begin
-             Clipboard.Clear;
-             repeat
+             Clipboard.Clear;              // Borra el portapapeles
+             repeat                        // Repite
+                   // Rellena el texto con los datos de la pimera linea de datos del test de ping
                    Texto:=Texto+StringGrid1.Cells[0,contador]+#9+StringGrid1.Cells[1,contador]+#9+#9+StringGrid1.Cells[2,contador]+#9+StringGrid1.Cells[3,contador]+#9+StringGrid1.Cells[4,contador]+#10;
+                   // Se asigna el texto del portapapeles como el valor de la variable texto
                    ClipBoard.AsText:=Texto;
+                   // Incrementa el contador de lineas
                    inc(contador);
-             until (contador>SpinEdit1.Value);
+             until (contador>SpinEdit1.Value); // Hasta que el contador de lineas sea mayor que el valor máximo de pings seleccionado por el usuario
+             // Mensaje de texto copiado al portapapeles
              MessageDlg('Ping copiado','Ping copiado al portapapeles. Puede usarlo en cualquier aplicación de texto usando la opción Pegar de la aplicación.',mtInformation,[mbok],0);
         end
      else
+         // Si no hay ping, mensaje de error al usuario
          MessageDlg('Ping no disponible','Aún no se ha realizado ningún ping con la aplicación. Haga un ping en la aplicación para poder usar esta función.',MtError,[mbok],0);
 end;
 
@@ -656,22 +687,34 @@ var
    Texto: String;
 
 begin
-     Texto:='Tracert generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13;
+     // Primer texto que aparece en el portapapeles
+     Texto:='Tracert generado por QuickSpeed '+RxVersionInfo1.FileVersion+#13+'Servidor destino: '+plComboBox2.Text+#13;
+     // Contador de lineas a 0
      contador:=0;
+     // Si hay IP en la primera linea del test de tracert
      if (StringGrid2.Cells[1,1]<>'') then
         begin
+             // Limpia el portapapeles
              Clipboard.Clear;
              repeat
+                   // Si la IP devuelta no es una cadena vacia
                    if (StringGrid2.Cells[1,contador]<>'') then
+                      // Asigna a texto el valor del texto anterior más toda la linea actual con los datos del salto actual
                       Texto:=Texto+StringGrid2.Cells[0,contador]+#9+StringGrid2.Cells[1,contador]+#9+#9+StringGrid2.Cells[2,contador]+#9+StringGrid2.Cells[3,contador]+#9+StringGrid2.Cells[4,contador]+#9+StringGrid2.Cells[5,contador]+#9+StringGrid2.Cells[6,contador]+#10
                    else
+                       // Pone en la columna correcta los NR
                        Texto:=Texto+StringGrid2.Cells[0,contador]+#9+#9+#9+#9+StringGrid2.Cells[2,contador]+#9+StringGrid2.Cells[3,contador]+#9+StringGrid2.Cells[4,contador]+#9+StringGrid2.Cells[5,contador]+#9+StringGrid2.Cells[6,contador]+#10;
+                   // Asigna el texto del portapapeles a la variable Texto
                    ClipBoard.AsText:=Texto;
+                   // Incrementa contador de lineas
                    inc(contador);
+             // Hasta que no haya valor de pings o el contador de lineas llegue el límite marcado por el usuario
              until (StringGrid2.Cells[2,contador]='') or (contador>SpinEdit2.Value);
+             // Mensaje de información de texto copiado al portapapeles para el usuario
              MessageDlg('Tracert copiado','Tracert copiado al portapapeles. Puede usarlo en cualquier aplicación de texto usando la opción Pegar de la aplicación.',mtInformation,[mbok],0);
         end
      else
+         // Mensaje de eror al usuario si el servidor no existe o no es accesible
          MessageDlg('Tracert no disponible','Aún no se ha realizado ningún tracert con la aplicación. Haga un tracert en la aplicación para poder usar esta función.',MtError,[mbok],0);
 end;
 

@@ -16,12 +16,10 @@
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MinorVersionNr Value="9"/>
-      <RevisionNr Value="9"/>
-      <BuildNr Value="760"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="828"/>
       <Language Value="040A"/>
-      <Attributes pvaDebug="True"/>
-      <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="0.4"/>
+      <StringTable Comments="Versión inicial del test de velocidad de QuickSpeed" CompanyName="BASpeed Software" FileDescription="Test de velocidad de QuickSpeed" InternalName="QuickSpeed" OriginalFilename="QuickSpeed.exe" ProductName="QuickSpeed" ProductVersion="1.0"/>
     </VersionInfo>
     <BuildModes>
       <Item Name="Default" Default="True"/>
@@ -110,7 +108,16 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <CodeGeneration>
+      <Optimizations>
+        <OptimizationLevel Value="2"/>
+      </Optimizations>
+    </CodeGeneration>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <RunWithoutDebug Value="True"/>
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
