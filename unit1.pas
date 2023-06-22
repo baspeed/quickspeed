@@ -181,10 +181,10 @@ var
   VMax: UInt64;                               // Velocidad máxima marcada por el test de velocidad en un momento determinado
   contadorping: Integer;                      // Contador de pings para el test de ping y el test de tracert
   Ping: TPingSend;                            // Objeto que puede realizar pings a servidores (protocolo ICMP)
-  tiempoping: Integer;
-  servidorping: String;
-  paisipshort, paisiplong: String;
-  cadenainfo: TStringList;
+  tiempoping: Integer;                        // Tiempo de ping medido en milisegudos
+  servidorping: String;                       // Servidor del ping (cadena de caracteres)
+  paisipshort, paisiplong: String;            // Nombre de los paises de las IP (cortos 2 letras y largos, nombre completo)
+  cadenainfo: TStringList;                    // Variable donde se guarda toda la información de la IP cuando se accede a IP-API.com
 
 implementation
 
@@ -510,7 +510,9 @@ begin
          ioh.Free;                                                     // Libera los manejadores de datos normales
      web.Free;                                                         // Libera el objeto HTTP
      terminado:=True;                                                  // Pone la variable terminado a true para indicar que el test ha terminado
-     velocidad:=0;                                                     // Pone la velocidad a 0 para el cálculo posterior de la velocidad
+     { Se quita la siguiente linea de código para que la velocidad media de cada hilo permanezca aunque el hilo haya acabado. De esta manera podemos ver mejor la velocidad media del test }
+     { ya que si la velocidad media de cada hilo se pone a cero al acabar, la velocidad media de todo el test baja una barbaridad cuando  debería mantenerse y este es el motivo }
+     {velocidad:=0;                                                     // Pone la velocidad a 0 para el cálculo posterior de la velocidad}
 end;
 
 // Rutina que se ejecuta cada vez que se llena el buffer de datos
@@ -606,7 +608,10 @@ begin
              BCButton2.ImageIndex:=1;                                        // Cambia la imagen del botón para mostrar la imagen de cancelar
              BCButton1.Enabled:=False;                                       // Inhabilita el botón 1 para no poder elegir otro test en caso de iniciar el test
              for contadorhilo:=1 to NUMHILOS do                              // Desde 1 hasta el número de hilos predeterminado en el código fuente
-                 hilosdescarga[contadorhilo]:=TDescarga.Create(True);        // Crea todos los hilos de descarga (6 simultaneos)
+                 begin
+                      hilosdescarga[contadorhilo]:=TDescarga.Create(True);        // Crea todos los hilos de descarga (6 simultaneos)
+                      hilosdescarga[contadorhilo].FreeOnTerminate:=False;
+                 end;
              Timer1.Enabled:=True;                                           // Inicia el Timer
              for contadorhilo:=1 to NUMHILOS do                              // Desde el hilo 1 hasta el hilo NUMMAX (6 por defecto en el código fuente original)
                  begin
@@ -614,7 +619,7 @@ begin
                            1 : hilosdescarga[contadorhilo].enlace:='https://testvelocidad.eu/speed-test/download.bin';
                            2 : hilosdescarga[contadorhilo].enlace:='http://ipv4.download.thinkbroadband.com/100MB.zip';
                            3 : hilosdescarga[contadorhilo].enlace:='https://rbx.proof.ovh.net/files/100Mb.dat';
-                           4 : hilosdescarga[contadorhilo].enlace:='https://es.download.nvidia.com/Windows/536.23/536.23-desktop-win10-win11-64bit-international-dch-whql.exe';
+                           4 : hilosdescarga[contadorhilo].enlace:='http://es.download.nvidia.com/Windows/536.23/536.23-desktop-win10-win11-64bit-international-dch-whql.exe';
                            5 : hilosdescarga[contadorhilo].enlace:='http://speedtest.london.linode.com/100MB-london.bin';
                            6 : hilosdescarga[contadorhilo].enlace:='https://ftp.rediris.es/debian-cd/12.0.0-live/amd64/iso-hybrid/debian-live-12.0.0-amd64-standard.iso';
                            7 : hilosdescarga[contadorhilo].enlace:='https://speed.hetzner.de/100MB.bin';
@@ -828,6 +833,7 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 var
    contadorhilos: integer;                    // Variable que contiene el numero de hilo actual
    tpctotal: integer;                         // Tanto por ciento total descargado del servidor
+   vmedia: single;                            // Velocidad media del test
 
 begin
      velocidadtotal:=0;                       // Velocidad total del test a 0
@@ -847,11 +853,15 @@ begin
      LCDDisplay6.Lines[1]:=FormatFloat('0000.00',hilosdescarga[5].velocidad/1000)+' Mbps';
      LCDDisplay7.Lines[0]:='Hilo 6';
      LCDDisplay7.Lines[1]:=FormatFloat('0000.00',hilosdescarga[6].velocidad/1000)+' Mbps';
-     DTThemedGauge1.Position:=velocidadtotal div 1000;
      if (velocidadtotal>VMax) then                                                             // Si la velocidad del test > velocidad máxima registrada hasta ese momento entonces
         VMax:=velocidadtotal;                                                                  // la velocidad máxima se corresponde con la velocidad del test
+     if ((velocidadtotal div 1000)>DTThemedGauge1.ScaleSettings.Maximum) then                             // Si la velocidad excede el valor máximo del velocímetro analógico
+        DTThemedGauge1.Position:=DTThemedGauge1.ScaleSettings.Maximum                            // Sólo muestra la velocidad máxima en ese caso
+     else
+          DTThemedGauge1.Position:=velocidadtotal div 1000;                                    // Si la velocidad es menor, mostrarla en el velocímetro analógico
      LCDDisplay1.Lines[0]:='Vmedia: '+FormatFloat('0000.00',velocidadtotal/1000)+' Mbps';                 // Imprime la velocidad actual del test
      LCDDisplay1.Lines[1]:='Vmax  : '+FormatFloat('0000.00',VMax/1000)+' Mbps';                           // Imprime la velocidad máxima del test
+     vmedia:=velocidadtotal/1000;
      plLogGraph1.Add(velocidadtotal div 1000);                                                 // Añade valor a la gráfica de velocidad (traza linea de valor de velocidad y mueve datos hacia la izquierda)
      tpctotal:=0;                                                                              // Tanto por ciento total a 0
      for contadorhilos:=1 to NUMHILOS do                                                       // Desde 1 hasta NUMHILOS (6 por defecto en el código fuente original)
@@ -868,8 +878,10 @@ begin
              timer1.Enabled:=False;                                                            // Para el timer para no seguir actualizando datos en la ventana principal
              cancelartestvelocidad:=False;                                                     // Pone el valor de Cancelar el test de velocidad a False
              testactivo:=False;                                                                // Ya no está activo el test de velocidad así que el test activo a False
-             // Se muestra un cuadro de diálogo mostrando la velocidad máxima alcanzada en el test si este ha acabado con éxito o se ha cancelado por el usuario
-             MessageDlg('Test de velocidad terminado','Test de velocidad terminado.'+#13+'La velocidad máxima alcanzada ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.',MtInformation,[MbOK],0,MbOK);
+             DTThemedGauge1.Position:=0;
+              // Se muestra un cuadro de diálogo mostrando la velocidad máxima alcanzada en el test si este ha acabado con éxito o se ha cancelado por el usuario
+             MessageDlg('Test de velocidad terminado','Test de velocidad terminado.'+#13+'La velocidad máxima ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.'+#13+
+                        'La velocidad media ha sido de '+FormatFloat('0000.00',vmedia)+' Mbps.',MtInformation,[MbOK],0,MbOK);
         end;
 end;
 
