@@ -875,13 +875,18 @@ begin
              BCButton2.ImageIndex:=0;                                                          // Cambia la imagen del botón para mostrar la imagen de iniciar el test de velocidad
              for contadorhilos:=1 to NUMHILOS do                                               // Desde el hilo 1 hasta el numero máximo de hilos (6)
                  hilosdescarga[contadorhilos].Free;                                            // Libera la memoria de los hilos de ejecución simultanea
-             timer1.Enabled:=False;                                                            // Para el timer para no seguir actualizando datos en la ventana principal
-             cancelartestvelocidad:=False;                                                     // Pone el valor de Cancelar el test de velocidad a False
+             timer1.Enabled:=False;                                                   // Pone el valor de Cancelar el test de velocidad a False
              testactivo:=False;                                                                // Ya no está activo el test de velocidad así que el test activo a False
              DTThemedGauge1.Position:=0;
               // Se muestra un cuadro de diálogo mostrando la velocidad máxima alcanzada en el test si este ha acabado con éxito o se ha cancelado por el usuario
-             MessageDlg('Test de velocidad terminado','Test de velocidad terminado.'+#13+'La velocidad máxima ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.'+#13+
-                        'La velocidad media ha sido de '+FormatFloat('0000.00',vmedia)+' Mbps.',MtInformation,[MbOK],0,MbOK);
+              if (cancelartestvelocidad=False) then
+                 // Mensaje de dialogo si el test se ha finalizado completamente
+                 MessageDlg('Test de velocidad terminado','Test de velocidad terminado.'+#13+'La velocidad máxima ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.'+#13+
+                            'La velocidad media ha sido de '+FormatFloat('0000.00',vmedia)+' Mbps.',MtInformation,[MbOK],0,MbOK)
+              else
+                   // Mensaje de dialogo si el test ha sido cancelado por el usuario
+                   MessageDlg('Test de velocidad cancelado','Test de velocidad cancelado.'+#13+'La velocidad máxima ha sido de '+FormatFloat('0000.00',VMax/1000)+' Mbps.',MtWarning,[MbOK],0,MbOK);
+              cancelartestvelocidad:=False;                                                    // Se vuelve a poner a falso la variable que indica que se ha cancelado el test de velocidad
         end;
 end;
 
